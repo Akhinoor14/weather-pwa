@@ -205,14 +205,22 @@ var PLACE = ""; // জায়গার নাম নিজে ঠিক কর
     return fetch(u, { signal: t.signal }).then(function (r) { t.done(); if (!r.ok) throw new Error("http"); return r.json(); }, function (e) { t.done(); throw e; });
   }
 
-  function clean(v) { return (v || "").replace(/\s*(উপজেলা|জেলা|বিভাগ|Upazila|Upazilla|District|Division)\s*$/i, "").trim(); }
-  // গ্রাম/এলাকা আগে, তারপর শহর বা উপজেলা। যেমন "তেলিগাতি, খুলনা"
+  var UP = /উপজেলা\s*$|Upazil+a\s*$/i, DI = /(^|\s)জেলা\s*$|\sDistrict\s*$/i, UN = /ইউনিয়ন\s*$|\sUnion\s*$/i, DV = /বিভাগ\s*$|\sDivision\s*$/i;
+  function clean(v) { return (v || "").replace(/\s*(উপজেলা|ইউনিয়ন|জেলা|বিভাগ|Upazila|Upazilla|Union|District|Division)\s*$/i, "").trim(); }
+  function find(a, re) { for (var k in a) { if (typeof a[k] === "string" && re.test(a[k])) return a[k]; } return ""; }
+  // গ্রাম/এলাকা, তারপর উপজেলা বা শহর, তারপর জেলা। যেমন "পলিপ্রয়াগপুর, বিরামপুর, দিনাজপুর"
   function pickPlace(a) {
-    var spec = clean(a.hamlet || a.village || a.neighbourhood || a.suburb || a.quarter || a.locality || a.town || a.city_district || a.municipality || a.city || "");
-    var parent = clean(a.city || a.county || a.state_district || "");
-    if (spec && parent === spec) parent = clean(a.county || a.state_district || "");
-    if (!spec) { spec = parent; parent = clean(a.state_district || a.state || ""); }
-    return spec && parent && spec !== parent ? spec + ", " + parent : (spec || parent);
+    var up = clean(find(a, UP)), di = clean(find(a, DI)), un = clean(find(a, UN));
+    var bad = function (v) { return typeof v !== "string" || UP.test(v) || DI.test(v) || UN.test(v) || DV.test(v); };
+    var spec = "";
+    ["hamlet", "village", "neighbourhood", "suburb", "quarter", "locality", "town", "city_district", "municipality", "city"].some(function (k) {
+      if (a[k] && !bad(a[k])) { spec = clean(a[k]); return true; } return false; });
+    var city = a.city && !bad(a.city) ? clean(a.city) : "";
+    if (!spec) spec = un || up || di;
+    var parts = [spec];
+    [city, up, di].forEach(function (x) {
+      if (x && !parts.some(function (y) { return y.indexOf(x) >= 0 || x.indexOf(y) >= 0; })) parts.push(x); });
+    return parts.filter(Boolean).slice(0, 3).join(", ");
   }
   function osmPlace(co) {
     var t = timeout(5000);
@@ -286,7 +294,7 @@ var PLACE = ""; // জায়গার নাম নিজে ঠিক কর
       dd += '<div class="dy"><span>' + nm + '</span>' + icon(d.daily.weather_code[n], true) + '<span class="rn">' + bn(d.daily.precipitation_probability_max[n] || 0) + '%</span><span class="tt">' + bn(rd(d.daily.temperature_2m_max[n])) + '° <i>' + bn(rd(d.daily.temperature_2m_min[n])) + '°</i></span></div>';
     }
     $("daily").innerHTML = dd;
-    var gq = "https://www.google.com/search?q=" + encodeURIComponent("weather" + (c.place ? " " + c.place : "")) + "&hl=bn";
+    var gq = "https://www.google.com/search?q=weather&hl=bn";
     $("google").href = gq; $("g2").href = gq;
     show("content");
   }
