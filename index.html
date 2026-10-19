@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2f7df6" id="tc">
+<meta name="description" content="এক ট্যাপে আবহাওয়া">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="আবহাওয়া">
+<title>আবহাওয়া</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<style>
+:root{--top:#4aa3ff;--bottom:#1d5fd6}
+body.night{--top:#1c2b5e;--bottom:#0a1230}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{font-family:"Noto Sans Bengali","Hind Siliguri",system-ui,-apple-system,"Segoe UI",sans-serif;
+  background:linear-gradient(180deg,var(--top),var(--bottom));color:#fff;text-align:center;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+  padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  transition:background .6s}
+main{display:flex;flex-direction:column;align-items:center;gap:20px;padding:28px;max-width:420px;animation:fade .5s ease both}
+.scene{width:min(66vw,260px);filter:drop-shadow(0 12px 24px rgba(0,0,0,.28))}
+.rays{transform-origin:150px 100px;animation:spin 18s linear infinite}
+.cloud{animation:drift 5s ease-in-out infinite alternate}
+.star{animation:tw 2.4s ease-in-out infinite alternate}
+body:not(.night) .moon,body.night .sun{display:none}
+h1{font-size:2.3rem;font-weight:700}
+p{font-size:1.2rem;line-height:1.6;color:rgba(255,255,255,.92)}
+.bar{width:150px;height:5px;border-radius:5px;background:rgba(255,255,255,.25);overflow:hidden}
+.bar i{display:block;height:100%;width:40%;border-radius:5px;background:#fff;animation:load 1s ease-in-out infinite}
+.btn{display:none;padding:16px 34px;border-radius:999px;background:#fff;color:#1d5fd6;
+  text-decoration:none;font:700 1.25rem inherit;font-family:inherit;border:0;cursor:pointer;
+  box-shadow:0 6px 18px rgba(0,0,0,.2)}
+.btn:active{transform:scale(.97)}
+.link{display:none;color:#fff;font-size:1.05rem;text-decoration:underline;opacity:.9}
+.go .bar,.install .bar{display:none}
+.go #go,.install #inst-link{display:inline-block}
+.install #inst-btn.ready{display:inline-block}
+.install #ios.on{display:block}
+#ios{display:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes drift{from{transform:translateX(-8px)}to{transform:translateX(8px)}}
+@keyframes tw{from{opacity:.35}to{opacity:1}}
+@keyframes load{0%{transform:translateX(-100%)}100%{transform:translateX(350%)}}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main id="app">
+  <svg class="scene" viewBox="0 0 300 220" role="img" aria-label="আবহাওয়া">
+    <g class="sun">
+      <g class="rays" stroke="#ffd447" stroke-width="7" stroke-linecap="round">
+        <line x1="150" y1="30" x2="150" y2="48"/><line x1="150" y1="152" x2="150" y2="170"/>
+        <line x1="90" y1="100" x2="108" y2="100"/><line x1="192" y1="100" x2="210" y2="100"/>
+        <line x1="107" y1="57" x2="120" y2="70"/><line x1="180" y1="130" x2="193" y2="143"/>
+        <line x1="193" y1="57" x2="180" y2="70"/><line x1="120" y1="130" x2="107" y2="143"/>
+      </g>
+      <circle cx="150" cy="100" r="40" fill="#ffc83d"/>
+    </g>
+    <g class="moon">
+      <mask id="cut"><rect width="300" height="220" fill="#fff"/><circle cx="170" cy="84" r="38" fill="#000"/></mask>
+      <circle cx="150" cy="95" r="42" fill="#f4f1d0" mask="url(#cut)"/>
+      <circle class="star" cx="80" cy="50" r="3" fill="#fff"/>
+      <circle class="star" cx="225" cy="45" r="2.5" fill="#fff" style="animation-delay:.8s"/>
+      <circle class="star" cx="235" cy="110" r="2" fill="#fff" style="animation-delay:1.4s"/>
+    </g>
+    <g class="cloud" fill="#fff">
+      <circle cx="120" cy="158" r="32"/><circle cx="162" cy="146" r="42"/>
+      <circle cx="205" cy="162" r="28"/><rect x="100" y="158" width="130" height="32" rx="16"/>
+    </g>
+  </svg>
+  <h1>আবহাওয়া</h1>
+  <p id="msg">আবহাওয়া দেখা হচ্ছে…</p>
+  <div class="bar"><i></i></div>
+  <a class="btn" id="go" href="#">আবহাওয়া দেখুন</a>
+  <button class="btn" id="inst-btn">ফোনে ইনস্টল করুন</button>
+  <p id="ios">নিচের <b>Share</b> বাটনে চাপুন, তারপর <b>"Add to Home Screen"</b> বেছে নিন।</p>
+  <a class="link" id="inst-link" href="#">ইনস্টল ছাড়াই আবহাওয়া দেখুন</a>
+</main>
+
+<script>
+/* ===== সেটিংস: দরকার হলে শুধু এই তিন লাইন বদলান ===== */
+var CITY    = "";    // খালি = ফোনের লোকেশন অনুযায়ী। শহর দিতে চাইলে লিখুন, যেমন: "khulna" বা "dhaka"
+var BANGLA  = true;  // true = বাংলায় রেজাল্ট, false = ইংরেজিতে
+var WAIT_MS = 900;   // স্প্ল্যাশ কত মিলিসেকেন্ড দেখাবে (১০০০ = ১ সেকেন্ড)
+/* ====================================================== */
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var app = $("app"), msg = $("msg"), timer, timer2;
+
+  var h = new Date().getHours(), night = h >= 18 || h < 6;
+  document.body.classList.toggle("night", night);
+  $("tc").setAttribute("content", night ? "#1c2b5e" : "#2f7df6");
+
+  var url = "https://www.google.com/search?q=" + encodeURIComponent("weather" + (CITY ? " " + CITY : "")) + (BANGLA ? "&hl=bn" : "");
+  $("go").href = url; $("inst-link").href = url;
+
+  if ("serviceWorker" in navigator) {
+    addEventListener("load", function () { navigator.serviceWorker.register("sw.js").catch(function () {}); });
+  }
+
+  var params = new URLSearchParams(location.search);
+  var installed = matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
+
+  function showButton(text) { if (text) msg.textContent = text; app.classList.add("go"); }
+
+  function launch() {
+    clearTimeout(timer); clearTimeout(timer2);
+    app.classList.remove("go");
+    if (!navigator.onLine) { showButton("ইন্টারনেট নেই। ইন্টারনেট চালু করুন।"); return; }
+    msg.textContent = "আবহাওয়া দেখা হচ্ছে…";
+    timer = setTimeout(function () { location.replace(url); }, WAIT_MS);
+    timer2 = setTimeout(function () { showButton("খুলছে না? নিচের বাটনে চাপুন।"); }, 3500);
+  }
+
+  if (installed || params.has("go")) {
+    addEventListener("online", launch);
+    addEventListener("pageshow", function (e) { if (e.persisted) { clearTimeout(timer); showButton("আবার দেখতে বাটনে চাপুন।"); } });
+    launch();
+  } else {
+    /* ব্রাউজারে খুললে: আগে ইনস্টল করার পেজ */
+    app.classList.add("install");
+    msg.textContent = "এই অ্যাপটি ফোনে ইনস্টল করুন। এরপর আইকনে চাপলেই আবহাওয়া খুলবে।";
+    if (/iphone|ipad|ipod/i.test(navigator.userAgent)) $("ios").classList.add("on");
+    var saved;
+    addEventListener("beforeinstallprompt", function (e) { e.preventDefault(); saved = e; $("inst-btn").classList.add("ready"); });
+    $("inst-btn").onclick = function () { if (saved) { saved.prompt(); saved = null; $("inst-btn").classList.remove("ready"); } };
+    addEventListener("appinstalled", function () { msg.textContent = "ইনস্টল হয়ে গেছে! এখন হোম স্ক্রিনের আইকনে চাপুন।"; });
+  }
+})();
+</script>
+</body>
+</html>
