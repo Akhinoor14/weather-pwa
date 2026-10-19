@@ -31,6 +31,8 @@ h1,h2{font-weight:700}
 .center p{font-size:1.15rem;line-height:1.6;opacity:.92}
 header{text-align:center;padding-top:6px}
 #place{font-size:1.45rem;font-weight:700}
+#placeSub{font-size:1.05rem;opacity:.9}
+#placeSub:empty{display:none}
 #upd{font-size:.95rem;opacity:.8;margin-top:2px}
 .hero{display:flex;flex-direction:column;align-items:center;margin:10px 0 6px}
 .bigicon svg{width:150px;filter:drop-shadow(0 10px 20px rgba(0,0,0,.25))}
@@ -89,7 +91,7 @@ h2.sec{font-size:1.2rem;margin:26px 2px 10px}
   </section>
 
   <section id="content" hidden>
-    <header><div id="place"></div><div id="upd"></div></header>
+    <header><div id="place"></div><div id="placeSub"></div><div id="upd"></div></header>
     <div class="hero">
       <div class="bigicon" id="bigicon"></div>
       <div class="temp" id="temp"></div>
@@ -119,10 +121,11 @@ h2.sec{font-size:1.2rem;margin:26px 2px 10px}
 /* ===== সেটিংস: সাধারণত কিছু বদলাতে হবে না ===== */
 var LAT = "";   // খালি = ফোনের আসল লোকেশন। ঠিক করে দিতে চাইলে লিখুন, যেমন: 22.8456
 var LON = "";   // যেমন: 89.5403 (খুলনা)
+var PLACE = ""; // জায়গার নাম নিজে ঠিক করে দিতে চাইলে লিখুন, যেমন: "আমার গ্রাম, বৈরাগঞ্জ"। খালি = নিজে নাম খুঁজবে
 /* ============================================== */
 (function () {
   var $ = function (id) { return document.getElementById(id); };
-  var KEY = "wx-cache-v1", DG = "০১২৩৪৫৬৭৮৯";
+  var KEY = "wx-cache-v2", DG = "০১২৩৪৫৬৭৮৯";
   var bn = function (v) { return String(v).replace(/\d/g, function (d) { return DG[d]; }); };
   var rd = Math.round;
 
@@ -176,14 +179,20 @@ var LON = "";   // যেমন: 89.5403 (খুলনা)
 
   function timeout(ms) { var c = ("AbortController" in window) ? new AbortController() : null; var t = setTimeout(function () { if (c) c.abort(); }, ms); return { signal: c ? c.signal : undefined, done: function () { clearTimeout(t); } }; }
 
-  function getCoords() {
+  function tryPos(high, ms, age) {
     return new Promise(function (res, rej) {
-      if (LAT !== "" && LON !== "") { res({ lat: +LAT, lon: +LON }); return; }
-      if (!navigator.geolocation) { rej({ why: "nogeo" }); return; }
       navigator.geolocation.getCurrentPosition(
-        function (p) { res({ lat: p.coords.latitude, lon: p.coords.longitude }); },
-        function (e) { rej({ why: e && e.code === 1 ? "denied" : "nofix" }); },
-        { enableHighAccuracy: false, timeout: 9000, maximumAge: 120000 });
+        function (p) { res({ lat: p.coords.latitude, lon: p.coords.longitude }); }, rej,
+        { enableHighAccuracy: high, timeout: ms, maximumAge: age });
+    });
+  }
+  function getCoords() {
+    if (LAT !== "" && LON !== "") return Promise.resolve({ lat: +LAT, lon: +LON });
+    if (!navigator.geolocation) return Promise.reject({ why: "nogeo" });
+    // আগে আসল GPS (নির্ভুল), না পেলে নেটওয়ার্ক লোকেশন
+    return tryPos(true, 8000, 30000).catch(function (e) {
+      if (e && e.code === 1) throw { why: "denied" };
+      return tryPos(false, 6000, 120000).catch(function (e2) { throw { why: e2 && e2.code === 1 ? "denied" : "nofix" }; });
     });
   }
 
@@ -196,16 +205,37 @@ var LON = "";   // যেমন: 89.5403 (খুলনা)
     return fetch(u, { signal: t.signal }).then(function (r) { t.done(); if (!r.ok) throw new Error("http"); return r.json(); }, function (e) { t.done(); throw e; });
   }
 
-  function fetchPlace(co, cached) {
-    if (cached && cached.place && Math.abs(cached.lat - co.lat) + Math.abs(cached.lon - co.lon) < 0.01) return Promise.resolve(cached.place);
+  function clean(v) { return (v || "").replace(/\s*(উপজেলা|জেলা|বিভাগ|Upazila|Upazilla|District|Division)\s*$/i, "").trim(); }
+  // গ্রাম/এলাকা আগে, তারপর শহর বা উপজেলা। যেমন "তেলিগাতি, খুলনা"
+  function pickPlace(a) {
+    var spec = clean(a.hamlet || a.village || a.neighbourhood || a.suburb || a.quarter || a.locality || a.town || a.city_district || a.municipality || a.city || "");
+    var parent = clean(a.city || a.county || a.state_district || "");
+    if (spec && parent === spec) parent = clean(a.county || a.state_district || "");
+    if (!spec) { spec = parent; parent = clean(a.state_district || a.state || ""); }
+    return spec && parent && spec !== parent ? spec + ", " + parent : (spec || parent);
+  }
+  function osmPlace(co) {
+    var t = timeout(5000);
+    return fetch("https://nominatim.openstreetmap.org/reverse?format=jsonv2&zoom=14&addressdetails=1&accept-language=bn,en&lat=" + co.lat.toFixed(5) + "&lon=" + co.lon.toFixed(5), { signal: t.signal })
+      .then(function (r) { t.done(); if (!r.ok) throw new Error("http"); return r.json(); })
+      .then(function (j) { return pickPlace(j.address || {}); })
+      .catch(function () { t.done(); return ""; });
+  }
+  function backupPlace(co) {
     var t = timeout(4000);
     return fetch("https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=" + co.lat.toFixed(4) + "&longitude=" + co.lon.toFixed(4) + "&localityLanguage=bn", { signal: t.signal })
       .then(function (r) { t.done(); return r.json(); })
       .then(function (j) {
-        var loc = (j.locality || "").trim(), city = (j.city || "").trim() || (j.principalSubdivision || "").trim();
-        return loc && city && loc !== city ? loc + ", " + city : (city || loc || "");
+        var loc = clean(j.locality), city = clean(j.city || j.principalSubdivision);
+        return loc && city && loc !== city ? loc + ", " + city : (city || loc);
       })
-      .catch(function () { t.done(); return (cached && cached.place) || ""; });
+      .catch(function () { t.done(); return ""; });
+  }
+  function fetchPlace(co, cached) {
+    if (PLACE) return Promise.resolve(PLACE);
+    if (cached && cached.place && Math.abs(cached.lat - co.lat) + Math.abs(cached.lon - co.lon) < 0.005) return Promise.resolve(cached.place);
+    return osmPlace(co).then(function (n) { return n || backupPlace(co); })
+      .then(function (n) { return n || (cached && cached.place) || ""; });
   }
 
   // ---- ছবি আঁকা ----
@@ -230,7 +260,8 @@ var LON = "";   // যেমন: 89.5403 (খুলনা)
   function render(c) {
     var d = c.data, cur = d.current, day = cur.is_day === 1, code = cur.weather_code;
     setTheme(cur);
-    $("place").textContent = c.place || "আপনার এলাকা";
+    var pp = (c.place || "").split(", ");
+    $("place").textContent = pp[0] || "আপনার এলাকা"; $("placeSub").textContent = pp.slice(1).join(", ");
     $("upd").textContent = "আপডেট: " + clock(+cur.time.slice(11, 13), +cur.time.slice(14, 16));
     $("bigicon").innerHTML = icon(code, day);
     $("temp").textContent = bn(rd(cur.temperature_2m)) + "°";
