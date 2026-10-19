@@ -2,7 +2,7 @@
   "id": "/",
   "name": "আবহাওয়া",
   "short_name": "আবহাওয়া",
-  "description": "এক ট্যাপে আবহাওয়া",
+  "description": "আপনার জায়গার আবহাওয়া",
   "lang": "bn",
   "dir": "ltr",
   "start_url": "./?src=pwa",

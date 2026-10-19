@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#2f7df6" id="tc">
-<meta name="description" content="এক ট্যাপে আবহাওয়া">
+<meta name="description" content="আপনার জায়গার আবহাওয়া">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -14,125 +14,296 @@
 <link rel="icon" type="image/png" href="icons/icon-192.png">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <style>
-:root{--top:#4aa3ff;--bottom:#1d5fd6}
-body.night{--top:#1c2b5e;--bottom:#0a1230}
+:root{--top:#4aa3ff;--bottom:#1d5fd6;--glass:rgba(255,255,255,.16);--line:rgba(255,255,255,.28)}
+:root[data-theme=cloudy]{--top:#7d97b8;--bottom:#46607f}
+:root[data-theme=rain]{--top:#586a82;--bottom:#2b384c}
+:root[data-theme=night]{--top:#1c2b5e;--bottom:#0a1230}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
-html,body{height:100%}
-body{font-family:"Noto Sans Bengali","Hind Siliguri",system-ui,-apple-system,"Segoe UI",sans-serif;
-  background:linear-gradient(180deg,var(--top),var(--bottom));color:#fff;text-align:center;
-  display:flex;align-items:center;justify-content:center;overflow:hidden;
-  padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
-  transition:background .6s}
-main{display:flex;flex-direction:column;align-items:center;gap:20px;padding:28px;max-width:420px;animation:fade .5s ease both}
-.scene{width:min(66vw,260px);filter:drop-shadow(0 12px 24px rgba(0,0,0,.28))}
-.rays{transform-origin:150px 100px;animation:spin 18s linear infinite}
-.cloud{animation:drift 5s ease-in-out infinite alternate}
-.star{animation:tw 2.4s ease-in-out infinite alternate}
-body:not(.night) .moon,body.night .sun{display:none}
-h1{font-size:2.3rem;font-weight:700}
-p{font-size:1.2rem;line-height:1.6;color:rgba(255,255,255,.92)}
-.bar{width:150px;height:5px;border-radius:5px;background:rgba(255,255,255,.25);overflow:hidden}
-.bar i{display:block;height:100%;width:40%;border-radius:5px;background:#fff;animation:load 1s ease-in-out infinite}
-.btn{display:none;padding:16px 34px;border-radius:999px;background:#fff;color:#1d5fd6;
-  text-decoration:none;font:700 1.25rem inherit;font-family:inherit;border:0;cursor:pointer;
-  box-shadow:0 6px 18px rgba(0,0,0,.2)}
-.btn:active{transform:scale(.97)}
-.link{display:none;color:#fff;font-size:1.05rem;text-decoration:underline;opacity:.9}
-.go .bar,.install .bar{display:none}
-.go #go,.install #inst-link{display:inline-block}
-.install #inst-btn.ready{display:inline-block}
-.install #ios.on{display:block}
-#ios{display:none}
-@keyframes spin{to{transform:rotate(360deg)}}
-@keyframes drift{from{transform:translateX(-8px)}to{transform:translateX(8px)}}
-@keyframes tw{from{opacity:.35}to{opacity:1}}
-@keyframes load{0%{transform:translateX(-100%)}100%{transform:translateX(350%)}}
+html{background:var(--bottom);min-height:100%}
+body{font-family:"Noto Sans Bengali","Hind Siliguri",system-ui,-apple-system,"Segoe UI",sans-serif;color:#fff;background:linear-gradient(180deg,var(--top),var(--bottom));
+  min-height:100vh;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+#app{max-width:480px;margin:0 auto;padding:22px 18px 40px}
+section{animation:fade .45s ease both}
+.center{min-height:80vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center}
+.center svg{width:130px;animation:float 2.2s ease-in-out infinite alternate}
+h1,h2{font-weight:700}
+.center h2{font-size:1.5rem}
+.center p{font-size:1.15rem;line-height:1.6;opacity:.92}
+header{text-align:center;padding-top:6px}
+#place{font-size:1.45rem;font-weight:700}
+#upd{font-size:.95rem;opacity:.8;margin-top:2px}
+.hero{display:flex;flex-direction:column;align-items:center;margin:10px 0 6px}
+.bigicon svg{width:150px;filter:drop-shadow(0 10px 20px rgba(0,0,0,.25))}
+.temp{font-size:5.6rem;font-weight:600;line-height:1.05}
+.cond{font-size:1.6rem;font-weight:600;margin-top:2px}
+.hilo{font-size:1.15rem;opacity:.92;margin-top:6px}
+.advice{margin:16px 0;padding:14px 16px;border-radius:18px;background:var(--glass);border:1px solid var(--line);font-size:1.2rem;line-height:1.55;text-align:center;font-weight:600}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stat{background:var(--glass);border:1px solid var(--line);border-radius:18px;padding:14px 6px;text-align:center}
+.stat b{display:block;font-size:1.45rem}
+.stat span{font-size:.95rem;opacity:.85}
+h2.sec{font-size:1.2rem;margin:26px 2px 10px}
+.hourly{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;scroll-snap-type:x proximity}
+.hr{flex:0 0 76px;scroll-snap-align:start;background:var(--glass);border:1px solid var(--line);border-radius:16px;padding:10px 4px;text-align:center}
+.hr small{display:block;font-size:.85rem;opacity:.9;min-height:2.4em;line-height:1.2}
+.hr svg{display:block;width:38px;margin:4px auto}
+.hr b{display:block;font-size:1.15rem}
+.daily{background:var(--glass);border:1px solid var(--line);border-radius:18px;padding:4px 14px}
+.dy{display:grid;grid-template-columns:1fr 40px 54px 84px;align-items:center;gap:6px;padding:10px 0;border-top:1px solid var(--line);font-size:1.05rem}
+.dy:first-child{border-top:0}
+.dy svg{width:34px}
+.dy .rn{font-size:.95rem;opacity:.85;text-align:right}
+.dy .tt{text-align:right;font-weight:700}
+.dy .tt i{font-style:normal;opacity:.7;font-weight:400}
+.actions{display:flex;flex-direction:column;gap:12px;margin-top:26px}
+.btn{display:block;width:100%;padding:16px;border-radius:999px;border:0;text-align:center;text-decoration:none;font-weight:700;font-size:1.2rem;font-family:inherit;cursor:pointer}
+.btn.main{background:#fff;color:#1d5fd6;box-shadow:0 6px 18px rgba(0,0,0,.2)}
+.btn.ghost{background:var(--glass);border:1px solid var(--line);color:#fff}
+.btn:active{transform:scale(.98)}
+.btn[disabled]{opacity:.6}
+.src{text-align:center;font-size:.85rem;opacity:.7;margin-top:18px}
+#banner{margin-bottom:14px;padding:12px 14px;border-radius:14px;background:rgba(255,200,61,.95);color:#4a3600;font-weight:600;font-size:1rem;text-align:center}
+#install{margin-top:20px;padding:14px;border-radius:18px;background:var(--glass);border:1px solid var(--line);text-align:center;font-size:1.05rem;line-height:1.55}
+#install .btn{margin-top:10px}
+[hidden]{display:none!important}
 @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@keyframes float{from{transform:translateY(-6px)}to{transform:translateY(6px)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 </head>
 <body>
-<main id="app">
-  <svg class="scene" viewBox="0 0 300 220" role="img" aria-label="আবহাওয়া">
-    <g class="sun">
-      <g class="rays" stroke="#ffd447" stroke-width="7" stroke-linecap="round">
-        <line x1="150" y1="30" x2="150" y2="48"/><line x1="150" y1="152" x2="150" y2="170"/>
-        <line x1="90" y1="100" x2="108" y2="100"/><line x1="192" y1="100" x2="210" y2="100"/>
-        <line x1="107" y1="57" x2="120" y2="70"/><line x1="180" y1="130" x2="193" y2="143"/>
-        <line x1="193" y1="57" x2="180" y2="70"/><line x1="120" y1="130" x2="107" y2="143"/>
-      </g>
-      <circle cx="150" cy="100" r="40" fill="#ffc83d"/>
-    </g>
-    <g class="moon">
-      <mask id="cut"><rect width="300" height="220" fill="#fff"/><circle cx="170" cy="84" r="38" fill="#000"/></mask>
-      <circle cx="150" cy="95" r="42" fill="#f4f1d0" mask="url(#cut)"/>
-      <circle class="star" cx="80" cy="50" r="3" fill="#fff"/>
-      <circle class="star" cx="225" cy="45" r="2.5" fill="#fff" style="animation-delay:.8s"/>
-      <circle class="star" cx="235" cy="110" r="2" fill="#fff" style="animation-delay:1.4s"/>
-    </g>
-    <g class="cloud" fill="#fff">
-      <circle cx="120" cy="158" r="32"/><circle cx="162" cy="146" r="42"/>
-      <circle cx="205" cy="162" r="28"/><rect x="100" y="158" width="130" height="32" rx="16"/>
-    </g>
-  </svg>
-  <h1>আবহাওয়া</h1>
-  <p id="msg">আবহাওয়া দেখা হচ্ছে…</p>
-  <div class="bar"><i></i></div>
-  <a class="btn" id="go" href="#">আবহাওয়া দেখুন</a>
-  <button class="btn" id="inst-btn">ফোনে ইনস্টল করুন</button>
-  <p id="ios">নিচের <b>Share</b> বাটনে চাপুন, তারপর <b>"Add to Home Screen"</b> বেছে নিন।</p>
-  <a class="link" id="inst-link" href="#">ইনস্টল ছাড়াই আবহাওয়া দেখুন</a>
-</main>
+<div id="app">
+  <div id="banner" hidden></div>
+
+  <section id="loading" class="center">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><g stroke="#ffd447" stroke-width="3" stroke-linecap="round"><line x1="32" y1="6" x2="32" y2="12"/><line x1="32" y1="52" x2="32" y2="58"/><line x1="6" y1="32" x2="12" y2="32"/><line x1="52" y1="32" x2="58" y2="32"/></g><circle cx="32" cy="32" r="13" fill="#ffc83d"/><g fill="#fff"><circle cx="24" cy="44" r="8"/><circle cx="35" cy="40" r="11"/><circle cx="46" cy="46" r="7"/><rect x="20" y="44" width="32" height="9" rx="4.5"/></g></svg>
+    <h2>আবহাওয়া আনা হচ্ছে…</h2>
+    <p id="loadMsg">আপনার জায়গা খোঁজা হচ্ছে</p>
+  </section>
+
+  <section id="error" class="center" hidden>
+    <h2 id="errT"></h2>
+    <p id="errM"></p>
+    <button class="btn main" id="retry">আবার চেষ্টা করুন</button>
+    <a class="btn ghost" id="g2" href="#">Google-এ আবহাওয়া দেখুন</a>
+  </section>
+
+  <section id="content" hidden>
+    <header><div id="place"></div><div id="upd"></div></header>
+    <div class="hero">
+      <div class="bigicon" id="bigicon"></div>
+      <div class="temp" id="temp"></div>
+      <div class="cond" id="cond"></div>
+      <div class="hilo" id="hilo"></div>
+    </div>
+    <div class="advice" id="advice"></div>
+    <div class="stats">
+      <div class="stat"><b id="sRain"></b><span>বৃষ্টির সম্ভাবনা</span></div>
+      <div class="stat"><b id="sHum"></b><span>আর্দ্রতা</span></div>
+      <div class="stat"><b id="sWind"></b><span>বাতাস (কিমি/ঘণ্টা)</span></div>
+    </div>
+    <h2 class="sec">ঘণ্টা অনুযায়ী</h2>
+    <div class="hourly" id="hourly"></div>
+    <h2 class="sec">আগামী ৭ দিন</h2>
+    <div class="daily" id="daily"></div>
+    <div class="actions">
+      <button class="btn main" id="refresh">নতুন করে দেখুন</button>
+      <a class="btn ghost" id="google" href="#" target="_blank" rel="noopener">Google-এ দেখুন</a>
+    </div>
+    <div id="install" hidden><div id="installTxt"></div><button class="btn main" id="installBtn" hidden>ফোনে ইনস্টল করুন</button></div>
+    <p class="src">তথ্য: Open-Meteo</p>
+  </section>
+</div>
 
 <script>
-/* ===== সেটিংস: দরকার হলে শুধু এই তিন লাইন বদলান ===== */
-var CITY    = "";    // খালি = ফোনের লোকেশন অনুযায়ী। শহর দিতে চাইলে লিখুন, যেমন: "khulna" বা "dhaka"
-var BANGLA  = true;  // true = বাংলায় রেজাল্ট, false = ইংরেজিতে
-var WAIT_MS = 900;   // স্প্ল্যাশ কত মিলিসেকেন্ড দেখাবে (১০০০ = ১ সেকেন্ড)
-/* ====================================================== */
+/* ===== সেটিংস: সাধারণত কিছু বদলাতে হবে না ===== */
+var LAT = "";   // খালি = ফোনের আসল লোকেশন। ঠিক করে দিতে চাইলে লিখুন, যেমন: 22.8456
+var LON = "";   // যেমন: 89.5403 (খুলনা)
+/* ============================================== */
 (function () {
   var $ = function (id) { return document.getElementById(id); };
-  var app = $("app"), msg = $("msg"), timer, timer2;
+  var KEY = "wx-cache-v1", DG = "০১২৩৪৫৬৭৮৯";
+  var bn = function (v) { return String(v).replace(/\d/g, function (d) { return DG[d]; }); };
+  var rd = Math.round;
 
-  var h = new Date().getHours(), night = h >= 18 || h < 6;
-  document.body.classList.toggle("night", night);
-  $("tc").setAttribute("content", night ? "#1c2b5e" : "#2f7df6");
+  function period(h) { return h >= 4 && h < 6 ? "ভোর" : h < 12 && h >= 6 ? "সকাল" : h >= 12 && h < 15 ? "দুপুর" : h >= 15 && h < 18 ? "বিকাল" : h >= 18 && h < 20 ? "সন্ধ্যা" : "রাত"; }
+  function h12(h) { return h % 12 === 0 ? 12 : h % 12; }
+  var clock = function (h, m) { return period(h) + " " + bn(h12(h)) + ":" + bn(("0" + m).slice(-2)); };
+  var hourLbl = function (h) { return period(h) + " " + bn(h12(h)) + "টা"; };
+  var DAYS = ["রবিবার", "সোমবার", "মঙ্গলবার", "বুধবার", "বৃহস্পতিবার", "শুক্রবার", "শনিবার"];
 
-  var url = "https://www.google.com/search?q=" + encodeURIComponent("weather" + (CITY ? " " + CITY : "")) + (BANGLA ? "&hl=bn" : "");
-  $("go").href = url; $("inst-link").href = url;
-
-  if ("serviceWorker" in navigator) {
-    addEventListener("load", function () { navigator.serviceWorker.register("sw.js").catch(function () {}); });
+  function kind(c) {
+    if (c === 0) return "clear"; if (c === 1 || c === 2) return "partly"; if (c === 3) return "cloud";
+    if (c === 45 || c === 48) return "fog"; if (c >= 51 && c <= 57) return "drizzle";
+    if ((c >= 61 && c <= 67) || (c >= 80 && c <= 82)) return "rain";
+    if ((c >= 71 && c <= 77) || c === 85 || c === 86) return "snow"; if (c >= 95) return "thunder"; return "cloud";
+  }
+  var TXT = { 1: "প্রায় পরিষ্কার", 2: "আংশিক মেঘলা", 3: "মেঘলা", 45: "কুয়াশা", 48: "কুয়াশা", 51: "হালকা গুঁড়িগুঁড়ি বৃষ্টি", 53: "গুঁড়িগুঁড়ি বৃষ্টি", 55: "ঘন গুঁড়িগুঁড়ি বৃষ্টি",
+    61: "হালকা বৃষ্টি", 63: "বৃষ্টি", 65: "ভারী বৃষ্টি", 80: "হালকা বর্ষণ", 81: "বর্ষণ", 82: "ভারী বর্ষণ", 95: "বজ্রসহ বৃষ্টি", 96: "বজ্রসহ শিলাবৃষ্টি", 99: "বজ্রসহ শিলাবৃষ্টি" };
+  function text(c, day) {
+    if (c === 0) return day ? "রৌদ্রোজ্জ্বল" : "পরিষ্কার আকাশ";
+    if (TXT[c]) return TXT[c];
+    var k = kind(c); return k === "drizzle" ? TXT[53] : k === "rain" ? TXT[63] : k === "snow" ? "তুষারপাত" : "মেঘলা";
   }
 
-  var params = new URLSearchParams(location.search);
-  var installed = matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
-
-  function showButton(text) { if (text) msg.textContent = text; app.classList.add("go"); }
-
-  function launch() {
-    clearTimeout(timer); clearTimeout(timer2);
-    app.classList.remove("go");
-    if (!navigator.onLine) { showButton("ইন্টারনেট নেই। ইন্টারনেট চালু করুন।"); return; }
-    msg.textContent = "আবহাওয়া দেখা হচ্ছে…";
-    timer = setTimeout(function () { location.replace(url); }, WAIT_MS);
-    timer2 = setTimeout(function () { showButton("খুলছে না? নিচের বাটনে চাপুন।"); }, 3500);
+  // ---- আইকন (SVG) ----
+  function cloudG(x, y, s, f) { return '<g transform="translate(' + x + ',' + y + ') scale(' + s + ')" fill="' + f + '"><circle cx="20" cy="30" r="10"/><circle cx="32" cy="24" r="13"/><circle cx="44" cy="31" r="9"/><rect x="12" y="30" width="40" height="10" rx="5"/></g>'; }
+  function sunG(cx, cy, r) {
+    var rays = ""; for (var i = 0; i < 8; i++) { var a = i * Math.PI / 4, c = Math.cos(a), s = Math.sin(a);
+      rays += '<line x1="' + (cx + c * (r + 4)) + '" y1="' + (cy + s * (r + 4)) + '" x2="' + (cx + c * (r + 9)) + '" y2="' + (cy + s * (r + 9)) + '"/>'; }
+    return '<g stroke="#ffd447" stroke-width="3" stroke-linecap="round">' + rays + '</g><circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" fill="#ffc83d"/>';
+  }
+  var MOON = '<path d="M38 12a20 20 0 1 0 14 34A17 17 0 0 1 38 12z" fill="#f4f1d0"/>';
+  function drops(n) { var p = [[22, 50, 19, 58], [33, 50, 30, 58], [44, 50, 41, 58]].slice(0, n), s = "";
+    p.forEach(function (d) { s += '<line x1="' + d[0] + '" y1="' + d[1] + '" x2="' + d[2] + '" y2="' + d[3] + '"/>'; });
+    return '<g stroke="#7cc4ff" stroke-width="3.5" stroke-linecap="round">' + s + '</g>'; }
+  function icon(c, day) {
+    var k = kind(c), W = "#fff", G = "#cfd9e8", g = "";
+    if (k === "clear") g = day ? sunG(32, 32, 11) : MOON;
+    else if (k === "partly") g = (day ? sunG(24, 22, 9) : '<g transform="translate(-2,-4) scale(.62)">' + MOON + '</g>') + cloudG(8, 14, .95, W);
+    else if (k === "cloud") g = cloudG(4, 10, 1.1, W);
+    else if (k === "fog") g = cloudG(6, 6, 1, W) + '<g stroke="#e6eefb" stroke-width="3" stroke-linecap="round"><line x1="14" y1="48" x2="50" y2="48"/><line x1="18" y1="55" x2="46" y2="55"/></g>';
+    else if (k === "drizzle") g = cloudG(4, 2, 1.1, W) + drops(2);
+    else if (k === "rain") g = cloudG(4, 2, 1.1, G) + drops(3);
+    else if (k === "thunder") g = cloudG(4, 0, 1.1, "#aab6c9") + '<polygon points="35,42 27,54 33,54 30,63 41,49 35,49" fill="#ffd447"/>';
+    else g = cloudG(4, 2, 1.1, W) + '<g fill="#fff"><circle cx="22" cy="52" r="2.5"/><circle cx="33" cy="56" r="2.5"/><circle cx="44" cy="52" r="2.5"/></g>';
+    return '<svg viewBox="0 0 64 64" aria-hidden="true">' + g + '</svg>';
   }
 
-  if (installed || params.has("go")) {
-    addEventListener("online", launch);
-    addEventListener("pageshow", function (e) { if (e.persisted) { clearTimeout(timer); showButton("আবার দেখতে বাটনে চাপুন।"); } });
-    launch();
-  } else {
-    /* ব্রাউজারে খুললে: আগে ইনস্টল করার পেজ */
-    app.classList.add("install");
-    msg.textContent = "এই অ্যাপটি ফোনে ইনস্টল করুন। এরপর আইকনে চাপলেই আবহাওয়া খুলবে।";
-    if (/iphone|ipad|ipod/i.test(navigator.userAgent)) $("ios").classList.add("on");
-    var saved;
-    addEventListener("beforeinstallprompt", function (e) { e.preventDefault(); saved = e; $("inst-btn").classList.add("ready"); });
-    $("inst-btn").onclick = function () { if (saved) { saved.prompt(); saved = null; $("inst-btn").classList.remove("ready"); } };
-    addEventListener("appinstalled", function () { msg.textContent = "ইনস্টল হয়ে গেছে! এখন হোম স্ক্রিনের আইকনে চাপুন।"; });
+  // ---- ডেটা সংগ্রহ ----
+  function readCache() { try { return JSON.parse(localStorage.getItem(KEY) || "null"); } catch (e) { return null; } }
+  function writeCache(c) { try { localStorage.setItem(KEY, JSON.stringify(c)); } catch (e) {} }
+
+  function timeout(ms) { var c = ("AbortController" in window) ? new AbortController() : null; var t = setTimeout(function () { if (c) c.abort(); }, ms); return { signal: c ? c.signal : undefined, done: function () { clearTimeout(t); } }; }
+
+  function getCoords() {
+    return new Promise(function (res, rej) {
+      if (LAT !== "" && LON !== "") { res({ lat: +LAT, lon: +LON }); return; }
+      if (!navigator.geolocation) { rej({ why: "nogeo" }); return; }
+      navigator.geolocation.getCurrentPosition(
+        function (p) { res({ lat: p.coords.latitude, lon: p.coords.longitude }); },
+        function (e) { rej({ why: e && e.code === 1 ? "denied" : "nofix" }); },
+        { enableHighAccuracy: false, timeout: 9000, maximumAge: 120000 });
+    });
   }
+
+  function fetchWx(co) {
+    var u = "https://api.open-meteo.com/v1/forecast?latitude=" + co.lat.toFixed(4) + "&longitude=" + co.lon.toFixed(4) +
+      "&current=temperature_2m,apparent_temperature,relative_humidity_2m,weather_code,wind_speed_10m,is_day" +
+      "&hourly=temperature_2m,weather_code,is_day&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max" +
+      "&timezone=auto&forecast_days=7";
+    var t = timeout(12000);
+    return fetch(u, { signal: t.signal }).then(function (r) { t.done(); if (!r.ok) throw new Error("http"); return r.json(); }, function (e) { t.done(); throw e; });
+  }
+
+  function fetchPlace(co, cached) {
+    if (cached && cached.place && Math.abs(cached.lat - co.lat) + Math.abs(cached.lon - co.lon) < 0.01) return Promise.resolve(cached.place);
+    var t = timeout(4000);
+    return fetch("https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=" + co.lat.toFixed(4) + "&longitude=" + co.lon.toFixed(4) + "&localityLanguage=bn", { signal: t.signal })
+      .then(function (r) { t.done(); return r.json(); })
+      .then(function (j) {
+        var loc = (j.locality || "").trim(), city = (j.city || "").trim() || (j.principalSubdivision || "").trim();
+        return loc && city && loc !== city ? loc + ", " + city : (city || loc || "");
+      })
+      .catch(function () { t.done(); return (cached && cached.place) || ""; });
+  }
+
+  // ---- ছবি আঁকা ----
+  function advice(cur, d) {
+    var k = kind(cur.weather_code), rain = d.daily.precipitation_probability_max[0] || 0, feel = cur.apparent_temperature;
+    if (k === "thunder") return "বজ্রপাতের সম্ভাবনা আছে। বাইরে সাবধানে থাকুন।";
+    if (k === "rain" || k === "drizzle") return "এখন বৃষ্টি হচ্ছে। বের হলে ছাতা নিন।";
+    if (rain >= 60) return "আজ বৃষ্টির সম্ভাবনা বেশি। ছাতা সাথে রাখুন।";
+    if (feel >= 38) return "খুব গরম। রোদে কম বের হন, পানি পান করুন।";
+    if (feel >= 33) return "গরম আছে। বাইরে গেলে পানি সাথে রাখুন।";
+    if (cur.temperature_2m <= 15) return "ঠান্ডা আছে। গরম কাপড় পরে বের হন।";
+    if (rain >= 35) return "হালকা বৃষ্টির সম্ভাবনা আছে।";
+    return "আজ আবহাওয়া ভালো।";
+  }
+
+  function setTheme(cur) {
+    var k = kind(cur.weather_code), th = cur.is_day !== 1 ? "night" : (k === "rain" || k === "drizzle" || k === "thunder") ? "rain" : (k === "cloud" || k === "fog") ? "cloudy" : "clear";
+    document.documentElement.setAttribute("data-theme", th);
+    $("tc").setAttribute("content", { clear: "#2f7df6", cloudy: "#5d7899", rain: "#3f4e66", night: "#121d45" }[th]);
+  }
+
+  function render(c) {
+    var d = c.data, cur = d.current, day = cur.is_day === 1, code = cur.weather_code;
+    setTheme(cur);
+    $("place").textContent = c.place || "আপনার এলাকা";
+    $("upd").textContent = "আপডেট: " + clock(+cur.time.slice(11, 13), +cur.time.slice(14, 16));
+    $("bigicon").innerHTML = icon(code, day);
+    $("temp").textContent = bn(rd(cur.temperature_2m)) + "°";
+    $("cond").textContent = text(code, day);
+    $("hilo").textContent = "সর্বোচ্চ " + bn(rd(d.daily.temperature_2m_max[0])) + "° · সর্বনিম্ন " + bn(rd(d.daily.temperature_2m_min[0])) + "° · অনুভূত " + bn(rd(cur.apparent_temperature)) + "°";
+    $("advice").textContent = advice(cur, d);
+    $("sRain").textContent = bn(d.daily.precipitation_probability_max[0] || 0) + "%";
+    $("sHum").textContent = bn(rd(cur.relative_humidity_2m)) + "%";
+    $("sWind").textContent = bn(rd(cur.wind_speed_10m));
+
+    var H = d.hourly, now = cur.time.slice(0, 13), i0 = 0;
+    for (var i = 0; i < H.time.length; i++) { if (H.time[i].slice(0, 13) >= now) { i0 = i; break; } }
+    var hh = "";
+    for (var j = i0; j < Math.min(i0 + 24, H.time.length); j++) {
+      hh += '<div class="hr"><small>' + (j === i0 ? "এখন" : hourLbl(+H.time[j].slice(11, 13))) + '</small>' + icon(H.weather_code[j], H.is_day[j] === 1) + '<b>' + bn(rd(H.temperature_2m[j])) + '°</b></div>';
+    }
+    $("hourly").innerHTML = hh;
+
+    var dd = "";
+    for (var n = 0; n < d.daily.time.length; n++) {
+      var p = d.daily.time[n].split("-"), nm = n === 0 ? "আজ" : n === 1 ? "আগামীকাল" : DAYS[new Date(+p[0], +p[1] - 1, +p[2]).getDay()];
+      dd += '<div class="dy"><span>' + nm + '</span>' + icon(d.daily.weather_code[n], true) + '<span class="rn">' + bn(d.daily.precipitation_probability_max[n] || 0) + '%</span><span class="tt">' + bn(rd(d.daily.temperature_2m_max[n])) + '° <i>' + bn(rd(d.daily.temperature_2m_min[n])) + '°</i></span></div>';
+    }
+    $("daily").innerHTML = dd;
+    var gq = "https://www.google.com/search?q=" + encodeURIComponent("weather" + (c.place ? " " + c.place : "")) + "&hl=bn";
+    $("google").href = gq; $("g2").href = gq;
+    show("content");
+  }
+
+  function show(id) { ["loading", "error", "content"].forEach(function (s) { $(s).hidden = s !== id; }); }
+  function banner(t) { $("banner").hidden = !t; $("banner").textContent = t || ""; }
+
+  var busy = false, cache = readCache();
+
+  function load() {
+    if (busy) return; busy = true;
+    $("refresh").disabled = true; $("refresh").textContent = "দেখা হচ্ছে…";
+    if (!cache) { show("loading"); $("loadMsg").textContent = "আপনার জায়গা খোঁজা হচ্ছে"; }
+    getCoords().then(function (co) {
+      $("loadMsg").textContent = "আবহাওয়ার তথ্য আনা হচ্ছে";
+      return Promise.all([fetchWx(co), fetchPlace(co, cache)]).then(function (r) {
+        cache = { t: Date.now(), lat: co.lat, lon: co.lon, place: r[1], data: r[0] };
+        writeCache(cache); banner(""); render(cache);
+      });
+    }).catch(function (e) {
+      if (cache) { banner("ইন্টারনেট বা লোকেশন পাওয়া যায়নি। আগের তথ্য দেখানো হচ্ছে।"); render(cache); return; }
+      var denied = e && e.why === "denied";
+      $("errT").textContent = denied ? "লোকেশনের অনুমতি দরকার" : "আবহাওয়া আনা যায়নি";
+      $("errM").textContent = denied
+        ? "ফোনের সেটিংস থেকে এই অ্যাপের জন্য লোকেশন চালু করুন, তারপর নিচের বাটনে চাপুন।"
+        : "ইন্টারনেট ও ফোনের লোকেশন (GPS) চালু আছে কিনা দেখে আবার চেষ্টা করুন।";
+      $("g2").href = "https://www.google.com/search?q=weather&hl=bn";
+      show("error");
+    }).then(function () { busy = false; $("refresh").disabled = false; $("refresh").textContent = "নতুন করে দেখুন"; });
+  }
+
+  $("refresh").onclick = load; $("retry").onclick = load;
+  addEventListener("online", load);
+  document.addEventListener("visibilitychange", function () { if (!document.hidden && (!cache || Date.now() - cache.t > 10 * 60 * 1000)) load(); });
+
+  // ইনস্টল
+  var standalone = matchMedia("(display-mode: standalone)").matches || navigator.standalone === true, dp;
+  if (!standalone) {
+    if (/iphone|ipad|ipod/i.test(navigator.userAgent)) { $("install").hidden = false; $("installTxt").innerHTML = "হোম স্ক্রিনে যোগ করতে নিচের <b>Share</b> বাটনে চাপুন, তারপর <b>Add to Home Screen</b> বেছে নিন।"; }
+    addEventListener("beforeinstallprompt", function (e) { e.preventDefault(); dp = e; $("install").hidden = false; $("installTxt").textContent = "এক ট্যাপে আবহাওয়া দেখতে অ্যাপটি ফোনে ইনস্টল করুন।"; $("installBtn").hidden = false; });
+    $("installBtn").onclick = function () { if (dp) { dp.prompt(); dp = null; $("install").hidden = true; } };
+  }
+  addEventListener("appinstalled", function () { $("install").hidden = true; });
+
+  if ("serviceWorker" in navigator) addEventListener("load", function () { navigator.serviceWorker.register("sw.js").catch(function () {}); });
+
+  if (cache) render(cache);
+  load();
 })();
 </script>
 </body>
