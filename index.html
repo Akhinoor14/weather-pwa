@@ -67,6 +67,90 @@ h2.sec{font-size:1.2rem;margin:26px 2px 10px}
 #banner{margin-bottom:14px;padding:12px 14px;border-radius:14px;background:rgba(255,200,61,.95);color:#4a3600;font-weight:600;font-size:1rem;text-align:center}
 #install{margin-top:20px;padding:14px;border-radius:18px;background:var(--glass);border:1px solid var(--line);text-align:center;font-size:1.05rem;line-height:1.55}
 #install .btn{margin-top:10px}
+#sheet{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.55);display:flex;align-items:flex-end;justify-content:center}
+#sheet .panel{width:100%;max-width:480px;max-height:88vh;overflow:auto;background:var(--bottom);border:1px solid var(--line);border-radius:24px 24px 0 0;padding:22px 18px calc(env(safe-area-inset-bottom) + 22px);animation:fade .25s ease both}
+#sheet h2{font-size:1.35rem;margin-bottom:6px}
+#sheet p{font-size:1.05rem;opacity:.9;margin-bottom:12px}
+.srow{display:flex;gap:8px;margin-bottom:12px}
+.srow input{flex:1;min-width:0;font:inherit;font-size:1.15rem;padding:13px 14px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.95);color:#16233f}
+.srow .btn{width:auto;padding:13px 20px}
+.item{display:block;width:100%;text-align:left;padding:13px 14px;margin-bottom:8px;border-radius:14px;border:1px solid var(--line);background:var(--glass);color:#fff;font-family:inherit;cursor:pointer}
+.item b{display:block;font-size:1.15rem;font-weight:700}
+.item span{font-size:.95rem;opacity:.85}
+#msgS{font-size:1.05rem;padding:8px 2px}
+#sheet .btn.ghost{margin-top:8px}
+.card{background:var(--glass);border:1px solid var(--line);border-radius:18px;padding:16px}
+.aq{display:flex;gap:14px;align-items:center}
+.aq .dot{flex:none;width:62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:700;color:#fff;border:3px solid rgba(255,255,255,.65)}
+.aq b{display:block;font-size:1.15rem;margin-bottom:2px}
+.aq span{font-size:1rem;line-height:1.5}
+.aqs{font-size:.92rem;opacity:.85;margin-top:12px;padding-top:10px;border-top:1px solid var(--line)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mi{background:var(--glass);border:1px solid var(--line);border-radius:16px;padding:14px 12px}
+.mi small{display:block;font-size:.92rem;opacity:.85}
+.mi b{display:block;font-size:1.35rem;margin:2px 0}
+.mi span{font-size:.92rem;opacity:.9}
+.dy.late{display:none}
+.all .dy.late{display:grid}
+#toggle14{margin-top:12px}
+.chips{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0 4px}
+.chip{background:var(--glass);border:1px solid var(--line);border-radius:14px;padding:10px 4px;text-align:center}
+.chip small{display:block;font-size:.85rem;opacity:.85}
+.chip b{font-size:1.08rem}
+.tabs,.seg{display:flex;gap:8px;overflow-x:auto;margin:12px 0 10px;padding-bottom:4px}
+.tab,.seg button{flex:none;padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--glass);color:#fff;font-family:inherit;font-size:1rem;cursor:pointer}
+.tab.on,.seg button.on{background:#fff;color:#1d5fd6;border-color:#fff;font-weight:700}
+.seg .gap{flex:1}
+.chartc{padding:10px 4px 4px}
+.chart{width:100%;height:auto;display:block}
+.chart text{fill:rgba(255,255,255,.92);font-size:21px;font-family:inherit}
+.tmr .tl{display:flex;align-items:center;gap:12px}
+.tmr .tl svg{width:64px;flex:none}
+.tmr b{font-size:1.7rem}
+.tmr i{font-style:normal;opacity:.75;font-size:1.2rem}
+.tmr span{display:block;font-size:1.05rem;opacity:.92}
+.slots{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.slot{background:rgba(255,255,255,.12);border-radius:14px;padding:10px 4px;text-align:center}
+.slot small{display:block;font-size:.85rem;opacity:.9}
+.slot svg{width:34px;margin:4px auto;display:block}
+.slot b{font-size:1.1rem}
+.hstat{margin-top:10px}
+#cmp{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.55);display:flex;align-items:flex-end;justify-content:center}
+#cmp .panel{width:100%;max-width:520px;max-height:92vh;overflow:auto;background:var(--bottom);border:1px solid var(--line);border-radius:24px 24px 0 0;padding:20px 14px calc(env(safe-area-inset-bottom) + 20px);animation:fade .25s ease both}
+#cmp h2{font-size:1.3rem;margin-bottom:6px}
+#cmp p{font-size:1rem;opacity:.92;line-height:1.5;margin-bottom:10px}
+#cmp .btn{padding:12px 6px;font-size:1.02rem}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:6px}
+.ch,.cr{display:grid;grid-template-columns:1.25fr .8fr 1fr 1fr;gap:6px;align-items:start;padding:9px 0;border-top:1px solid var(--line);font-size:.95rem}
+.ch{font-weight:700;border-top:0;font-size:.88rem;opacity:.9}
+.cl{line-height:1.3}
+.co{font-weight:700;font-size:1.05rem;padding-top:6px}
+.ci input{width:100%;min-width:0;font-family:inherit;font-size:1rem;padding:8px 4px;border-radius:10px;border:1px solid var(--line);background:rgba(255,255,255,.95);color:#16233f;text-align:center}
+.ci small{display:block;text-align:center;font-size:.88rem;margin-top:2px;min-height:1.1em;font-weight:700}
+.cn{font-size:.8rem;opacity:.65;text-align:center;padding-top:8px}
+.ok{color:#9af0b4}.bad{color:#ffb4a8}
+#cnote{font-weight:700;margin-top:10px}
+.areas{display:flex;gap:8px;overflow-x:auto;margin:0 0 12px;padding-bottom:2px}
+.ac{flex:none;padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--glass);color:#fff;font-family:inherit;font-size:1rem;cursor:pointer}
+.ac.on{background:#fff;color:#1d5fd6;font-weight:700;border-color:#fff}
+.alert{background:#ffd447;color:#4a3600;border-radius:14px;padding:12px 14px;font-weight:700;font-size:1.05rem;line-height:1.45;margin-top:12px}
+.alert.red{background:#ff6b5e;color:#fff}
+.note{font-size:1rem;line-height:1.5;opacity:.92;margin-bottom:10px}
+#radarMap{height:300px;border-radius:14px;overflow:hidden;background:#1d3a6b}
+.rc{display:flex;align-items:center;gap:10px;margin-top:10px}
+.rc input{flex:1;min-width:0}
+.rc .tab{padding:8px 14px}
+#rTime{font-size:.95rem;min-width:5.5em;text-align:right}
+.near{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:11px 0;border-top:1px solid var(--line)}
+.near:first-child{border-top:0}
+.near b{font-size:1.1rem}
+.near small{display:block;opacity:.8;font-size:.88rem}
+.near .nt{display:flex;align-items:center;gap:8px;font-weight:700;font-size:1.15rem;flex:none}
+.near svg{width:32px}
+.sv{display:flex;gap:8px;margin-bottom:8px}
+.sv .item{margin:0;flex:1}
+.sv .x{flex:none;width:48px;border-radius:14px;border:1px solid var(--line);background:var(--glass);color:#fff;font-size:1.3rem;cursor:pointer}
+#savedList h3{font-size:1rem;opacity:.9;margin:0 0 8px}
 [hidden]{display:none!important}
 @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 @keyframes float{from{transform:translateY(-6px)}to{transform:translateY(6px)}}
@@ -91,25 +175,78 @@ h2.sec{font-size:1.2rem;margin:26px 2px 10px}
   </section>
 
   <section id="content" hidden>
+    <div class="areas" id="areas" hidden></div>
     <header><div id="place"></div><div id="placeSub"></div><div id="upd"></div></header>
+    <div id="alerts"></div>
     <div class="hero">
       <div class="bigicon" id="bigicon"></div>
       <div class="temp" id="temp"></div>
       <div class="cond" id="cond"></div>
-      <div class="hilo" id="hilo"></div>
     </div>
+    <div class="chips" id="chips"></div>
     <div class="advice" id="advice"></div>
     <div class="stats">
       <div class="stat"><b id="sRain"></b><span>বৃষ্টির সম্ভাবনা</span></div>
       <div class="stat"><b id="sHum"></b><span>আর্দ্রতা</span></div>
       <div class="stat"><b id="sWind"></b><span>বাতাস (কিমি/ঘণ্টা)</span></div>
     </div>
-    <h2 class="sec">ঘণ্টা অনুযায়ী</h2>
+
+    <h2 class="sec">আগামীকালের আবহাওয়া</h2>
+    <div class="card tmr" id="tomorrow"></div>
+
+    <h2 class="sec">আজকের আবহাওয়া (২৪ ঘণ্টা)</h2>
     <div class="hourly" id="hourly"></div>
-    <h2 class="sec">আগামী ৭ দিন</h2>
+    <div class="tabs" id="htabs"></div>
+    <div class="card chartc" id="hchart"></div>
+
+    <h2 class="sec">আগামী ১৪ দিনের পূর্বাভাস</h2>
+    <div class="seg"><button id="dv7">৭ দিন</button><button id="dv14">১৪ দিন</button><span class="gap"></span><button id="vlist">তালিকা</button><button id="vgraph">গ্রাফ</button></div>
     <div class="daily" id="daily"></div>
+    <div class="card chartc" id="dchart" hidden></div>
+    <div class="card hstat" id="summary"></div>
+
+    <h2 class="sec">বিস্তারিত আবহাওয়া তথ্য</h2>
+    <div class="grid2" id="more"></div>
+
+    <div id="aqiWrap" hidden><h2 class="sec">বাতাসের মান</h2><div class="card" id="aqi"></div></div>
+
+    <h2 class="sec">তাপ-চাপ সূচক (আনুমানিক)</h2>
+    <div class="card" id="heat"></div>
+
+    <div id="histWrap" hidden>
+      <h2 class="sec">বিগত দিনের আবহাওয়া</h2>
+      <div class="seg"><button id="h7">৭ দিন</button><button id="h30">৩০ দিন</button></div>
+      <div class="card chartc" id="hist"></div>
+      <div class="grid2 hstat" id="histStats"></div>
+    </div>
+
+    <div id="agriWrap" hidden>
+      <h2 class="sec">কৃষি আবহাওয়া</h2>
+      <div class="grid2" id="agriCards"></div>
+      <div class="card hstat" id="agriAdv"></div>
+    </div>
+
+    <h2 class="sec">বৃষ্টির রাডার</h2>
+    <div class="card">
+      <p class="note" id="radarMsg">বৃষ্টির মেঘ কোন দিকে যাচ্ছে, মানচিত্রে দেখুন।</p>
+      <button class="btn ghost" id="radarBtn">রাডার মানচিত্র দেখুন</button>
+      <div id="radarBox" hidden><div id="radarMap"></div><div class="rc"><button class="tab" id="rPlay">চালান</button><input type="range" id="rSlide" min="0" max="0" value="0"><span id="rTime"></span></div></div>
+    </div>
+
+    <h2 class="sec">কাছাকাছি এলাকা</h2>
+    <div class="card">
+      <p class="note" id="nearMsg">প্রায় ১০ কিমি আশেপাশের জায়গাগুলোর তাপমাত্রা।</p>
+      <div id="nearList"></div>
+      <button class="btn ghost" id="nearBtn">কাছাকাছি এলাকা দেখুন</button>
+    </div>
+
     <div class="actions">
       <button class="btn main" id="refresh">নতুন করে দেখুন</button>
+      <button class="btn ghost" id="shareBtn">শেয়ার করুন</button>
+      <button class="btn ghost" id="cmpBtn">তিন সোর্স তুলনা করুন</button>
+      <button class="btn ghost" id="change">এলাকা বদলান</button>
+      <button class="btn ghost" id="useGps" hidden>আমার লোকেশন (GPS) ব্যবহার করুন</button>
+      <a class="btn ghost" id="aboBtn" href="#" target="_blank" rel="noopener">abohawa.bd-তে বিস্তারিত দেখুন</a>
       <a class="btn ghost" id="google" href="#" target="_blank" rel="noopener">Google-এ দেখুন</a>
     </div>
     <div id="install" hidden><div id="installTxt"></div><button class="btn main" id="installBtn" hidden>ফোনে ইনস্টল করুন</button></div>
@@ -117,15 +254,40 @@ h2.sec{font-size:1.2rem;margin:26px 2px 10px}
   </section>
 </div>
 
+<div id="sheet" hidden>
+  <div class="panel">
+    <h2>এলাকা খুঁজুন</h2>
+    <div id="savedList"></div>
+    <p>গ্রাম, ইউনিয়ন বা উপজেলার নাম লিখুন</p>
+    <div class="srow"><input id="q" type="search" placeholder="যেমন: পলিপ্রয়াগপুর" autocomplete="off"><button class="btn main" id="doSearch">খুঁজুন</button></div>
+    <div id="msgS"></div><div id="res"></div>
+    <button class="btn ghost" id="closeS">বন্ধ করুন</button>
+  </div>
+</div>
+
+<div id="cmp" hidden>
+  <div class="panel">
+    <h2>তিন সোর্সের তুলনা</h2>
+    <p>abohawa.bd ও Google সরাসরি আনা যায় না। তাই একই সময়ে ওই দুটি খুলে সংখ্যা এখানে লিখুন, পার্থক্য সাথে সাথে দেখাবে।</p>
+    <div class="two"><a class="btn ghost" id="cmpA" href="#" target="_blank" rel="noopener">abohawa.bd খুলুন</a><a class="btn ghost" id="cmpG" href="#" target="_blank" rel="noopener">Google খুলুন</a></div>
+    <div class="ch"><div>বিষয়</div><div>আমাদের</div><div>abohawa.bd</div><div>Google</div></div>
+    <div id="ctable"></div>
+    <p id="cnote"></p>
+    <p id="cupd"></p>
+    <button class="btn ghost" id="cmpClose">বন্ধ করুন</button>
+  </div>
+</div>
+
 <script>
 /* ===== সেটিংস: সাধারণত কিছু বদলাতে হবে না ===== */
 var LAT = "";   // খালি = ফোনের আসল লোকেশন। ঠিক করে দিতে চাইলে লিখুন, যেমন: 22.8456
 var LON = "";   // যেমন: 89.5403 (খুলনা)
+var ABOHAWA = "https://abohawa.bd/rangpur/dinajpur/birganj/shibrampur"; // আপনার এলাকার abohawa.bd লিংক। খালি রাখলে বাটন লুকানো থাকবে
 var PLACE = ""; // জায়গার নাম নিজে ঠিক করে দিতে চাইলে লিখুন, যেমন: "আমার গ্রাম, বৈরাগঞ্জ"। খালি = নিজে নাম খুঁজবে
 /* ============================================== */
 (function () {
   var $ = function (id) { return document.getElementById(id); };
-  var KEY = "wx-cache-v2", DG = "০১২৩৪৫৬৭৮৯";
+  var KEY = "wx-cache-v5", DG = "০১২৩৪৫৬৭৮৯";
   var bn = function (v) { return String(v).replace(/\d/g, function (d) { return DG[d]; }); };
   var rd = Math.round;
 
@@ -149,6 +311,17 @@ var PLACE = ""; // জায়গার নাম নিজে ঠিক কর
     var k = kind(c); return k === "drizzle" ? TXT[53] : k === "rain" ? TXT[63] : k === "snow" ? "তুষারপাত" : "মেঘলা";
   }
 
+  var COMPASS = ["উত্তর", "উত্তর-পূর্ব", "পূর্ব", "দক্ষিণ-পূর্ব", "দক্ষিণ", "দক্ষিণ-পশ্চিম", "পশ্চিম", "উত্তর-পশ্চিম"];
+  var dirTxt = function (d) { return COMPASS[Math.round(d / 45) % 8]; };
+  var uvTxt = function (u) { return u < 3 ? "কম" : u < 6 ? "মাঝারি" : u < 8 ? "উচ্চ" : u < 11 ? "অতি উচ্চ" : "চরম"; };
+  function aqiInfo(v) {
+    if (v <= 50) return ["ভালো", "#27ae60", "বাতাস ভালো। স্বাভাবিকভাবে চলাফেরা করুন।"];
+    if (v <= 100) return ["মাঝারি", "#d4ac0d", "বাতাস মোটামুটি ঠিক আছে।"];
+    if (v <= 150) return ["সংবেদনশীলদের জন্য অস্বাস্থ্যকর", "#e67e22", "বয়স্ক ও শ্বাসকষ্টের রোগীরা বেশিক্ষণ বাইরে থাকবেন না।"];
+    if (v <= 200) return ["অস্বাস্থ্যকর", "#e74c3c", "বাইরে কম থাকুন। বাইরে গেলে মাস্ক পরুন।"];
+    if (v <= 300) return ["খুব অস্বাস্থ্যকর", "#8e44ad", "সম্ভব হলে ঘরের ভেতরে থাকুন।"];
+    return ["বিপজ্জনক", "#922b21", "ঘরের বাইরে যাবেন না।"];
+  }
   // ---- আইকন (SVG) ----
   function cloudG(x, y, s, f) { return '<g transform="translate(' + x + ',' + y + ') scale(' + s + ')" fill="' + f + '"><circle cx="20" cy="30" r="10"/><circle cx="32" cy="24" r="13"/><circle cx="44" cy="31" r="9"/><rect x="12" y="30" width="40" height="10" rx="5"/></g>'; }
   function sunG(cx, cy, r) {
@@ -198,13 +371,38 @@ var PLACE = ""; // জায়গার নাম নিজে ঠিক কর
 
   function fetchWx(co) {
     var u = "https://api.open-meteo.com/v1/forecast?latitude=" + co.lat.toFixed(4) + "&longitude=" + co.lon.toFixed(4) +
-      "&current=temperature_2m,apparent_temperature,relative_humidity_2m,weather_code,wind_speed_10m,is_day" +
-      "&hourly=temperature_2m,weather_code,is_day&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max" +
-      "&timezone=auto&forecast_days=7";
+      "&current=temperature_2m,apparent_temperature,relative_humidity_2m,weather_code,wind_speed_10m,wind_direction_10m,wind_gusts_10m,pressure_msl,cloud_cover,precipitation,is_day" +
+      "&hourly=temperature_2m,apparent_temperature,precipitation_probability,weather_code,is_day,relative_humidity_2m,dew_point_2m,cloud_cover,pressure_msl,wind_speed_10m,visibility,uv_index" +
+      "&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,sunrise,sunset,wind_speed_10m_max" +
+      "&timezone=auto&forecast_days=14";
     var t = timeout(12000);
     return fetch(u, { signal: t.signal }).then(function (r) { t.done(); if (!r.ok) throw new Error("http"); return r.json(); }, function (e) { t.done(); throw e; });
   }
 
+  function fetchHist(co) {
+    var t = timeout(12000);
+    return fetch("https://api.open-meteo.com/v1/forecast?latitude=" + co.lat.toFixed(4) + "&longitude=" + co.lon.toFixed(4) +
+      "&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,wind_speed_10m_max&past_days=31&forecast_days=1&timezone=auto", { signal: t.signal })
+      .then(function (r) { t.done(); if (!r.ok) throw new Error("http"); return r.json(); })
+      .then(function (j) { return j && j.daily ? j.daily : null; })
+      .catch(function () { t.done(); return null; });
+  }
+  function fetchAgri(co) {
+    var t = timeout(10000);
+    return fetch("https://api.open-meteo.com/v1/forecast?latitude=" + co.lat.toFixed(4) + "&longitude=" + co.lon.toFixed(4) +
+      "&hourly=soil_temperature_6cm,soil_moisture_3_to_9cm&daily=et0_fao_evapotranspiration,precipitation_sum&forecast_days=7&timezone=auto", { signal: t.signal })
+      .then(function (r) { t.done(); if (!r.ok) throw new Error("http"); return r.json(); })
+      .then(function (j) { return j && j.hourly && j.daily ? j : null; })
+      .catch(function () { t.done(); return null; });
+  }
+  function fetchAq(co) {
+    var t = timeout(10000);
+    return fetch("https://air-quality-api.open-meteo.com/v1/air-quality?latitude=" + co.lat.toFixed(4) + "&longitude=" + co.lon.toFixed(4) +
+      "&current=us_aqi,pm2_5,pm10,ozone,nitrogen_dioxide,sulphur_dioxide,carbon_monoxide&timezone=auto", { signal: t.signal })
+      .then(function (r) { t.done(); if (!r.ok) throw new Error("http"); return r.json(); })
+      .then(function (j) { return j && j.current ? j.current : null; })
+      .catch(function () { t.done(); return null; });
+  }
   var UP = /উপজেলা\s*$|Upazil+a\s*$/i, DI = /(^|\s)জেলা\s*$|\sDistrict\s*$/i, UN = /ইউনিয়ন\s*$|\sUnion\s*$/i, DV = /বিভাগ\s*$|\sDivision\s*$/i;
   function clean(v) { return (v || "").replace(/\s*(উপজেলা|ইউনিয়ন|জেলা|বিভাগ|Upazila|Upazilla|Union|District|Division)\s*$/i, "").trim(); }
   function find(a, re) { for (var k in a) { if (typeof a[k] === "string" && re.test(a[k])) return a[k]; } return ""; }
@@ -240,6 +438,7 @@ var PLACE = ""; // জায়গার নাম নিজে ঠিক কর
       .catch(function () { t.done(); return ""; });
   }
   function fetchPlace(co, cached) {
+    if (co.manual) return Promise.resolve(co.manual);
     if (PLACE) return Promise.resolve(PLACE);
     if (cached && cached.place && Math.abs(cached.lat - co.lat) + Math.abs(cached.lon - co.lon) < 0.005) return Promise.resolve(cached.place);
     return osmPlace(co).then(function (n) { return n || backupPlace(co); })
@@ -265,37 +464,280 @@ var PLACE = ""; // জায়গার নাম নিজে ঠিক কর
     $("tc").setAttribute("content", { clear: "#2f7df6", cloudy: "#5d7899", rain: "#3f4e66", night: "#121d45" }[th]);
   }
 
+  var V = { c: null, i0: 0, hTab: 0, days: 7, graph: false, hist: 30 };
+  var HM = [["temperature_2m", "তাপমাত্রা", "°", null, "#ffc15e"], ["apparent_temperature", "অনুভূত", "°", null, "#ff9f7a"], ["precipitation_probability", "বৃষ্টি", "%", [0, 100], "#8fd3ff"],
+    ["wind_speed_10m", "বাতাস", " কিমি/ঘ", [0, null], "#a5f0c8"], ["relative_humidity_2m", "আর্দ্রতা", "%", [0, 100], "#9fc5ff"], ["cloud_cover", "মেঘ", "%", [0, 100], "#d5dbe6"],
+    ["pressure_msl", "চাপ", " hPa", null, "#f2b8ff"], ["uv_index", "UV", "", [0, null], "#ffe27a"]];
+  var DS = ["রবি", "সোম", "মঙ্গল", "বুধ", "বৃহ", "শুক্র", "শনি"];
+  var MON = ["জানু", "ফেব্রু", "মার্চ", "এপ্রিল", "মে", "জুন", "জুলাই", "আগস্ট", "সেপ্ট", "অক্টো", "নভে", "ডিসে"];
+
+  // ---- গ্রাফ (SVG, কোনো লাইব্রেরি লাগে না) ----
+  function chart(series, labels, o) {
+    var W = 600, HH = 230, L = 44, R = 16, T = 32, B = 34, n = labels.length, all = [], i, k;
+    series.forEach(function (s) { all = all.concat(s.v); });
+    var mn = Math.min.apply(null, all), mx = Math.max.apply(null, all), rng = (mx - mn) || 1;
+    if (o.lo == null) mn -= Math.max(rng * .18, 1); else mn = o.lo;
+    if (o.hi == null) mx += Math.max(rng * .18, 1); else mx = o.hi;
+    var X = function (q) { return L + (W - L - R) * (n === 1 ? .5 : q / (n - 1)); };
+    var Y = function (v) { return T + (HH - T - B) * (1 - (v - mn) / (mx - mn)); };
+    var g = "";
+    for (k = 0; k < 3; k++) { var gv = mn + (mx - mn) * k / 2, gy = Y(gv).toFixed(1);
+      g += '<line x1="' + L + '" y1="' + gy + '" x2="' + (W - R) + '" y2="' + gy + '" stroke="rgba(255,255,255,.2)"/><text x="' + (L - 6) + '" y="' + (+gy + 5) + '" text-anchor="end">' + bn(rd(gv)) + '</text>'; }
+    series.forEach(function (s, si) {
+      var pts = s.v.map(function (v, q) { return X(q).toFixed(1) + "," + Y(v).toFixed(1); });
+      if (o.area !== false && si === 0) g += '<path d="M' + pts.join(" L") + ' L' + X(n - 1).toFixed(1) + ',' + (HH - B) + ' L' + X(0).toFixed(1) + ',' + (HH - B) + ' Z" fill="' + s.c + '" opacity=".2"/>';
+      g += '<polyline points="' + pts.join(" ") + '" fill="none" stroke="' + s.c + '" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>';
+      s.v.forEach(function (v, q) {
+        var show = o.vals && q % (o.every || 1) === 0;
+        if (show || q === 0) g += '<circle cx="' + X(q).toFixed(1) + '" cy="' + Y(v).toFixed(1) + '" r="' + (show ? 4 : 5) + '" fill="' + s.c + '" stroke="#fff" stroke-width="1.5"/>';
+        if (show) g += '<text x="' + X(q).toFixed(1) + '" y="' + (Y(v) + (s.pos === "b" ? 24 : -10)).toFixed(1) + '" text-anchor="middle">' + bn(o.dec ? v.toFixed(1) : rd(v)) + (o.unit && o.unit.length < 3 ? o.unit : "") + '</text>';
+      });
+    });
+    for (i = 0; i < n; i += (o.xEvery || 1)) g += '<text x="' + X(i).toFixed(1) + '" y="' + (HH - 8) + '" text-anchor="middle">' + labels[i] + '</text>';
+    return '<svg class="chart" viewBox="0 0 ' + W + ' ' + HH + '" role="img">' + g + '</svg>';
+  }
+  function wbgt(T, RH) { var e = RH / 100 * 6.105 * Math.exp(17.27 * T / (237.7 + T)); return .567 * T + .393 * e + 3.94; }
+  var dateLbl = function (iso) { var p = iso.split("-"); return bn(+p[2]) + " " + MON[+p[1] - 1]; };
+
+  function drawHourly() {
+    var H = V.c.data.hourly, m = HM[V.hTab], arr = H[m[0]];
+    var btns = $("htabs").children; for (var t = 0; t < btns.length; t++) btns[t].classList.toggle("on", +btns[t].getAttribute("data-i") === V.hTab);
+    if (!arr) { $("hchart").innerHTML = ""; return; }
+    var vals = [], labs = [], j, hh;
+    for (j = V.i0; j < Math.min(V.i0 + 24, H.time.length); j++) { hh = +H.time[j].slice(11, 13); vals.push(arr[j] == null ? 0 : arr[j]); labs.push(bn(h12(hh)) + (hh < 12 ? "AM" : "PM")); }
+    $("hchart").innerHTML = chart([{ v: vals, c: m[4] }], labs, { unit: m[2], lo: m[3] ? m[3][0] : null, hi: m[3] ? m[3][1] : null, vals: true, every: 3, xEvery: 3, dec: m[0] === "uv_index" });
+  }
+  function drawDaily() {
+    var D = V.c.data.daily, n = Math.min(V.days, D.time.length), q, dd = "", hi = [], lo = [], labs = [];
+    $("dv7").classList.toggle("on", V.days === 7); $("dv14").classList.toggle("on", V.days === 14);
+    $("vlist").classList.toggle("on", !V.graph); $("vgraph").classList.toggle("on", V.graph);
+    $("daily").hidden = V.graph; $("dchart").hidden = !V.graph;
+    for (q = 0; q < n; q++) {
+      var p = D.time[q].split("-"), wd = new Date(+p[0], +p[1] - 1, +p[2]).getDay(), nm = q === 0 ? "আজ" : q === 1 ? "আগামীকাল" : DAYS[wd];
+      dd += '<div class="dy"><span>' + nm + '</span>' + icon(D.weather_code[q], true) + '<span class="rn">' + bn(D.precipitation_probability_max[q] || 0) + '%</span><span class="tt">' + bn(rd(D.temperature_2m_max[q])) + '° <i>' + bn(rd(D.temperature_2m_min[q])) + '°</i></span></div>';
+      hi.push(D.temperature_2m_max[q]); lo.push(D.temperature_2m_min[q]); labs.push(q === 0 ? "আজ" : DS[wd]);
+    }
+    $("daily").innerHTML = dd;
+    $("dchart").innerHTML = chart([{ v: hi, c: "#ffb066", pos: "a" }, { v: lo, c: "#8fd3ff", pos: "b" }], labs, { vals: true, every: n > 8 ? 2 : 1, xEvery: 1, area: false, unit: "°" });
+  }
+  function drawHist() {
+    var h = V.c.hist; $("histWrap").hidden = !h; if (!h) return;
+    var tot = h.time.length - 1, N = Math.min(V.hist, tot), s0 = tot - N;
+    var mx = h.temperature_2m_max.slice(s0, tot), mnn = h.temperature_2m_min.slice(s0, tot), rain = h.precipitation_sum.slice(s0, tot), wind = h.wind_speed_10m_max.slice(s0, tot), dts = h.time.slice(s0, tot);
+    var avg = function (a) { return a.reduce(function (x, y) { return x + (y || 0); }, 0) / (a.length || 1); };
+    $("h7").classList.toggle("on", V.hist === 7); $("h30").classList.toggle("on", V.hist === 30);
+    $("hist").innerHTML = chart([{ v: mx, c: "#ffb066", pos: "a" }, { v: mnn, c: "#8fd3ff", pos: "b" }], dts.map(function (x) { var pr = x.split("-"); return N <= 7 ? DS[new Date(+pr[0], +pr[1] - 1, +pr[2]).getDay()] : dateLbl(x); }), { area: false, vals: N <= 7, every: 1, xEvery: N <= 7 ? 1 : 7, unit: "°" });
+    $("histStats").innerHTML = [["গড় সর্বোচ্চ", bn(avg(mx).toFixed(1)) + "°"], ["গড় সর্বনিম্ন", bn(avg(mnn).toFixed(1)) + "°"],
+      ["মোট বৃষ্টিপাত", bn(rain.reduce(function (x, y) { return x + (y || 0); }, 0).toFixed(1)) + " মিমি"], ["সর্বোচ্চ বাতাস", bn(rd(Math.max.apply(null, wind))) + " কিমি/ঘ"]]
+      .map(function (x) { return '<div class="mi"><small>' + x[0] + '</small><b>' + x[1] + '</b></div>'; }).join("");
+  }
+
+  // ---- সতর্কতা ----
+  function drawAlerts() {
+    var d = V.c.data, H = d.hourly, i0 = V.i0, out = [], th = 0, hv = 0, fog = 0, hot = 0, cold = 0, q, e = Math.min(i0 + 24, H.time.length);
+    for (q = i0; q < e; q++) {
+      var k = H.weather_code[q]; if (k >= 95) th = 1; if (k === 65 || k === 82 || k === 67) hv = 1;
+      if (k === 45 || k === 48 || (H.visibility && H.visibility[q] < 1000)) fog = 1;
+      if (H.apparent_temperature && H.apparent_temperature[q] >= 40) hot = 1; if (H.apparent_temperature && H.apparent_temperature[q] <= 10) cold = 1;
+    }
+    if (th) out.push(["red", "বজ্রসহ বৃষ্টির সম্ভাবনা আছে। খোলা জায়গায় থাকবেন না।"]);
+    if (hv) out.push(["red", "ভারী বৃষ্টির সম্ভাবনা আছে। সাবধানে চলাফেরা করুন।"]);
+    if (fog) out.push(["", "কুয়াশার সম্ভাবনা আছে। দৃশ্যমানতা কম থাকতে পারে।"]);
+    if (hot) out.push(["red", "অতি গরম অনুভূত হবে। রোদে বের হবেন না, পানি পান করুন।"]);
+    if (cold) out.push(["", "তীব্র ঠান্ডা অনুভূত হবে। গরম কাপড় পরুন।"]);
+    $("alerts").innerHTML = out.map(function (a) { return '<div class="alert ' + a[0] + '">সতর্কতা: ' + a[1] + '</div>'; }).join("");
+  }
+
+  // ---- কৃষি আবহাওয়া ----
+  function drawAgri() {
+    var c = V.c, a = c.agri, wrap = $("agriWrap"); if (!a) { wrap.hidden = true; return; }
+    var now = c.data.current.time.slice(0, 13), ix = 0, q;
+    for (q = 0; q < a.hourly.time.length; q++) { if (a.hourly.time[q].slice(0, 13) >= now) { ix = q; break; } }
+    var st = a.hourly.soil_temperature_6cm ? a.hourly.soil_temperature_6cm[ix] : null, sm = a.hourly.soil_moisture_3_to_9cm ? a.hourly.soil_moisture_3_to_9cm[ix] : null;
+    var et = a.daily.et0_fao_evapotranspiration ? a.daily.et0_fao_evapotranspiration[0] : null;
+    var rain7 = (a.daily.precipitation_sum || []).slice(0, 7).reduce(function (x, y) { return x + (y || 0); }, 0);
+    var smp = sm == null ? null : sm * 100, cards = [];
+    function cd(t, v, sub) { cards.push('<div class="mi"><small>' + t + '</small><b>' + v + '</b><span>' + (sub || "&nbsp;") + '</span></div>'); }
+    if (st != null) cd("মাটির তাপমাত্রা", bn(st.toFixed(1)) + "°", "৬ সেমি গভীরে");
+    if (smp != null) cd("মাটির আর্দ্রতা", bn(rd(smp)) + "%", smp < 20 ? "শুকনো" : smp < 35 ? "মাঝারি" : "ভেজা");
+    if (et != null) cd("আজকের বাষ্পীভবন", bn(et.toFixed(1)) + " মিমি", "মাটি ও গাছ থেকে");
+    cd("আগামী ৭ দিনে বৃষ্টি", bn(rain7.toFixed(0)) + " মিমি", "মোট পূর্বাভাস");
+    $("agriCards").innerHTML = cards.join("");
+    var H = c.data.hourly, ok = true, i0 = V.i0;
+    for (q = i0; q < Math.min(i0 + 6, H.time.length); q++) { if ((H.wind_speed_10m[q] || 0) > 12 || (H.precipitation_probability[q] || 0) >= 30) ok = false; }
+    var tips = [ok ? "স্প্রে: আগামী ৬ ঘণ্টা বাতাস কম ও বৃষ্টির সম্ভাবনা কম। কীটনাশক বা সার স্প্রের জন্য ভালো সময়।" : "স্প্রে: আগামী ৬ ঘণ্টায় বাতাস বা বৃষ্টির সম্ভাবনা আছে। এখন স্প্রে না করাই ভালো।"];
+    if (smp != null && rain7 < 10 && smp < 20) tips.push("সেচ: মাটি শুকনো আর আগামী ৭ দিনে বৃষ্টি কম। সেচের কথা ভাবুন।");
+    else if (rain7 >= 60) tips.push("নিকাশ: ৭ দিনে অনেক বৃষ্টির সম্ভাবনা। জমিতে পানি না জমে সে ব্যবস্থা রাখুন।");
+    $("agriAdv").innerHTML = '<b>আজকের পরামর্শ</b>' + tips.map(function (t) { return '<div class="aqs" style="border:0;margin-top:8px;padding-top:0;font-size:1rem;opacity:.95">' + t + '</div>'; }).join("") +
+      '<div class="aqs">এটি সাধারণ পরামর্শ। ফসল ও মাটির ধরন অনুযায়ী বদলাতে পারে।</div>';
+    wrap.hidden = false;
+  }
+
+  // ---- সেভ করা এলাকা ----
+  var SKEY = "wx-saved-v1";
+  function readSaved() { try { return JSON.parse(localStorage.getItem(SKEY) || "[]"); } catch (e) { return []; } }
+  function writeSaved(a) { try { localStorage.setItem(SKEY, JSON.stringify(a)); } catch (e) {} }
+  function pushSaved(m) { var a = readSaved().filter(function (x) { return x.place !== m.place; }); a.unshift(m); writeSaved(a.slice(0, 6)); }
+  function mkBtn(cls, txt, fn) { var b = document.createElement("button"); b.className = cls; b.textContent = txt; b.onclick = fn; return b; }
+  function drawAreas() {
+    var a = readSaved(), el = $("areas"), cur = readManual(); el.innerHTML = ""; if (!a.length) { el.hidden = true; return; }
+    el.appendChild(mkBtn("ac" + (cur ? "" : " on"), "আমার লোকেশন", function () { saveManual(null); load(); }));
+    a.forEach(function (x) { el.appendChild(mkBtn("ac" + (cur && cur.place === x.place ? " on" : ""), x.place.split(", ")[0], function () { saveManual(x); load(); })); });
+    el.hidden = false;
+  }
+  function drawSaved() {
+    var a = readSaved(), box = $("savedList"); box.innerHTML = ""; if (!a.length) return;
+    var h = document.createElement("h3"); h.textContent = "সেভ করা এলাকা"; box.appendChild(h);
+    a.forEach(function (x) {
+      var row = document.createElement("div"); row.className = "sv";
+      row.appendChild(mkBtn("item", x.place, function () { saveManual(x); closeSheet(); load(); }));
+      row.appendChild(mkBtn("x", "×", function () { writeSaved(readSaved().filter(function (y) { return y.place !== x.place; })); drawSaved(); drawAreas(); }));
+      box.appendChild(row);
+    });
+  }
+
+  // ---- কাছাকাছি এলাকা ----
+  var NEAR = [[0, "উত্তরে"], [60, "উত্তর-পূর্বে"], [120, "দক্ষিণ-পূর্বে"], [180, "দক্ষিণে"], [240, "দক্ষিণ-পশ্চিমে"], [300, "উত্তর-পশ্চিমে"]];
+  function drawNear(pts) {
+    $("nearList").innerHTML = pts.map(function (p) {
+      return '<div class="near"><div><b></b><small>' + p.dir + ' · প্রায় ১০ কিমি</small></div><div class="nt">' + icon(p.code, p.day) + bn(rd(p.t)) + '°</div></div>';
+    }).join("");
+    var bs = $("nearList").querySelectorAll("b"); pts.forEach(function (p, i) { bs[i].textContent = p.name || (p.dir + " এলাকা"); });
+  }
+  function loadNear() {
+    var c = V.c; if (!c) return; $("nearBtn").hidden = true; $("nearMsg").textContent = "খোঁজা হচ্ছে…";
+    var home = (c.place || "").split(", ")[0];
+    var pts = NEAR.map(function (n) { var b = n[0] * Math.PI / 180; return { lat: c.lat + (10 / 111.32) * Math.cos(b), lon: c.lon + (10 / (111.32 * Math.cos(c.lat * Math.PI / 180))) * Math.sin(b), dir: n[1], name: "" }; });
+    var t = timeout(12000);
+    fetch("https://api.open-meteo.com/v1/forecast?latitude=" + pts.map(function (p) { return p.lat.toFixed(3); }).join(",") + "&longitude=" + pts.map(function (p) { return p.lon.toFixed(3); }).join(",") +
+      "&current=temperature_2m,weather_code,is_day&timezone=auto", { signal: t.signal })
+      .then(function (r) { t.done(); if (!r.ok) throw new Error("http"); return r.json(); })
+      .then(function (arr) {
+        arr = [].concat(arr);
+        pts.forEach(function (p, i) { var cu = arr[i].current; p.t = cu.temperature_2m; p.code = cu.weather_code; p.day = cu.is_day === 1; });
+        $("nearMsg").textContent = "প্রায় ১০ কিমি আশেপাশের জায়গাগুলোর তাপমাত্রা।"; drawNear(pts);
+        // নামগুলো একটা একটা করে আনা হয় (OpenStreetMap-এর নিয়ম মেনে ধীরে)
+        var chain = Promise.resolve();
+        pts.forEach(function (p) { chain = chain.then(function () { return new Promise(function (res) { setTimeout(res, 1100); }); }).then(function () { return osmPlace({ lat: p.lat, lon: p.lon }); })
+          .then(function (n) { var nm = (n || "").split(", ")[0]; if (nm && nm !== home && !pts.some(function (o) { return o.name === nm; })) { p.name = nm; drawNear(pts); } }); });
+      })
+      .catch(function () { t.done(); $("nearMsg").textContent = "এখন আনা যাচ্ছে না। ইন্টারনেট দেখে আবার চেষ্টা করুন।"; $("nearBtn").hidden = false; });
+  }
+
+  // ---- বৃষ্টির রাডার (প্রথমে চাপলে তবেই লোড হয়) ----
+  function loadLeaflet() {
+    return new Promise(function (res, rej) {
+      if (window.L) { res(); return; }
+      var l = document.createElement("link"); l.rel = "stylesheet"; l.href = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"; document.head.appendChild(l);
+      var sc = document.createElement("script"); sc.src = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"; sc.onload = res; sc.onerror = rej; document.head.appendChild(sc);
+    });
+  }
+  function buildMap(host, frames) {
+    var c = V.c; $("radarMsg").textContent = ""; $("radarBox").hidden = false;
+    if (V.map) V.map.remove();
+    var map = V.map = L.map("radarMap").setView([c.lat, c.lon], 6);
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 10, attribution: "© OpenStreetMap" }).addTo(map);
+    L.circleMarker([c.lat, c.lon], { radius: 7, color: "#fff", weight: 3, fillColor: "#e74c3c", fillOpacity: 1 }).addTo(map);
+    setTimeout(function () { map.invalidateSize(); }, 50);
+    var cur = null, sl = $("rSlide"), timer = null; sl.max = frames.length - 1;
+    function showF(i) {
+      if (cur) map.removeLayer(cur); var f = frames[i];
+      cur = L.tileLayer(host + f.path + "/256/{z}/{x}/{y}/2/1_1.png", { opacity: .75, maxNativeZoom: 7, maxZoom: 10, attribution: "RainViewer" }).addTo(map);
+      var dt = new Date(f.time * 1000); $("rTime").textContent = clock(dt.getHours(), dt.getMinutes()); sl.value = i;
+    }
+    sl.oninput = function () { showF(+sl.value); };
+    $("rPlay").textContent = "চালান";
+    $("rPlay").onclick = function () {
+      if (timer) { clearInterval(timer); timer = null; this.textContent = "চালান"; return; }
+      this.textContent = "থামান"; timer = setInterval(function () { showF((+sl.value + 1) % frames.length); }, 700);
+    };
+    showF(frames.length - 1);
+  }
+  function loadRadar() {
+    $("radarBtn").hidden = true; $("radarMsg").textContent = "রাডার আনা হচ্ছে…";
+    loadLeaflet().then(function () { return fetch("https://api.rainviewer.com/public/weather-maps.json"); })
+      .then(function (r) { if (!r.ok) throw new Error("http"); return r.json(); })
+      .then(function (j) { var fr = (j.radar && j.radar.past) || []; if (!fr.length) throw new Error("none"); buildMap(j.host, fr); })
+      .catch(function () { $("radarMsg").textContent = "রাডার এখন পাওয়া যাচ্ছে না। পরে আবার চেষ্টা করুন।"; $("radarBtn").hidden = false; });
+  }
+  function resetExtras() {
+    if (V.map) { V.map.remove(); V.map = null; }
+    $("radarBox").hidden = true; $("radarBtn").hidden = false; $("radarMsg").textContent = "বৃষ্টির মেঘ কোন দিকে যাচ্ছে, মানচিত্রে দেখুন।";
+    $("nearList").innerHTML = ""; $("nearBtn").hidden = false; $("nearMsg").textContent = "প্রায় ১০ কিমি আশেপাশের জায়গাগুলোর তাপমাত্রা।";
+  }
+
   function render(c) {
-    var d = c.data, cur = d.current, day = cur.is_day === 1, code = cur.weather_code;
-    setTheme(cur);
+    var d = c.data, cur = d.current, H = d.hourly, D = d.daily, day = cur.is_day === 1, code = cur.weather_code, q;
+    V.c = c; setTheme(cur);
     var pp = (c.place || "").split(", ");
     $("place").textContent = pp[0] || "আপনার এলাকা"; $("placeSub").textContent = pp.slice(1).join(", ");
     $("upd").textContent = "আপডেট: " + clock(+cur.time.slice(11, 13), +cur.time.slice(14, 16));
     $("bigicon").innerHTML = icon(code, day);
     $("temp").textContent = bn(rd(cur.temperature_2m)) + "°";
     $("cond").textContent = text(code, day);
-    $("hilo").textContent = "সর্বোচ্চ " + bn(rd(d.daily.temperature_2m_max[0])) + "° · সর্বনিম্ন " + bn(rd(d.daily.temperature_2m_min[0])) + "° · অনুভূত " + bn(rd(cur.apparent_temperature)) + "°";
+    var sr = D.sunrise ? D.sunrise[0] : "", ss = D.sunset ? D.sunset[0] : "";
+    var ch = [["অনুভূত", bn(rd(cur.apparent_temperature)) + "°"], ["সর্বোচ্চ", bn(rd(D.temperature_2m_max[0])) + "°"], ["সর্বনিম্ন", bn(rd(D.temperature_2m_min[0])) + "°"]];
+    if (sr) ch.push(["সূর্যোদয়", clock(+sr.slice(11, 13), +sr.slice(14, 16))], ["সূর্যাস্ত", clock(+ss.slice(11, 13), +ss.slice(14, 16))]);
+    $("chips").innerHTML = ch.map(function (x) { return '<div class="chip"><small>' + x[0] + '</small><b>' + x[1] + '</b></div>'; }).join("");
     $("advice").textContent = advice(cur, d);
-    $("sRain").textContent = bn(d.daily.precipitation_probability_max[0] || 0) + "%";
-    $("sHum").textContent = bn(rd(cur.relative_humidity_2m)) + "%";
-    $("sWind").textContent = bn(rd(cur.wind_speed_10m));
+    var rainP = D.precipitation_probability_max[0] || 0;
+    $("sRain").textContent = bn(rainP) + "%"; $("sHum").textContent = bn(rd(cur.relative_humidity_2m)) + "%"; $("sWind").textContent = bn(rd(cur.wind_speed_10m));
 
-    var H = d.hourly, now = cur.time.slice(0, 13), i0 = 0;
-    for (var i = 0; i < H.time.length; i++) { if (H.time[i].slice(0, 13) >= now) { i0 = i; break; } }
+    var now = cur.time.slice(0, 13), i0 = 0;
+    for (q = 0; q < H.time.length; q++) { if (H.time[q].slice(0, 13) >= now) { i0 = q; break; } }
+    V.i0 = i0;
+
+    // আগামীকাল
+    var tm = "";
+    if (D.time.length > 1) {
+      var sh = "";
+      [[8, "সকাল (৮টা)"], [14, "দুপুর (২টা)"], [20, "রাত (৮টা)"]].forEach(function (sl) {
+        var key = D.time[1] + "T" + ("0" + sl[0]).slice(-2) + ":00", ix = H.time.indexOf(key);
+        if (ix >= 0) sh += '<div class="slot"><small>' + sl[1] + '</small>' + icon(H.weather_code[ix], H.is_day[ix] === 1) + '<b>' + bn(rd(H.temperature_2m[ix])) + '°</b></div>';
+      });
+      tm = '<div class="tl">' + icon(D.weather_code[1], true) + '<div><b>' + bn(rd(D.temperature_2m_max[1])) + '° <i>/ ' + bn(rd(D.temperature_2m_min[1])) + '°</i></b><span>' + text(D.weather_code[1], true) + '</span></div></div><div class="slots">' + sh + '</div>' +
+        '<div class="aqs">' + (D.wind_speed_10m_max ? 'সর্বোচ্চ বাতাস: ' + bn(rd(D.wind_speed_10m_max[1])) + ' কিমি/ঘণ্টা · ' : '') + 'বৃষ্টির সম্ভাবনা: ' + bn(D.precipitation_probability_max[1] || 0) + '%</div>';
+    }
+    $("tomorrow").innerHTML = tm;
+
+    // ২৪ ঘণ্টা: কার্ড + ট্যাব + গ্রাফ
     var hh = "";
-    for (var j = i0; j < Math.min(i0 + 24, H.time.length); j++) {
-      hh += '<div class="hr"><small>' + (j === i0 ? "এখন" : hourLbl(+H.time[j].slice(11, 13))) + '</small>' + icon(H.weather_code[j], H.is_day[j] === 1) + '<b>' + bn(rd(H.temperature_2m[j])) + '°</b></div>';
+    for (q = i0; q < Math.min(i0 + 24, H.time.length); q++) {
+      hh += '<div class="hr"><small>' + (q === i0 ? "এখন" : hourLbl(+H.time[q].slice(11, 13))) + '</small>' + icon(H.weather_code[q], H.is_day[q] === 1) + '<b>' + bn(rd(H.temperature_2m[q])) + '°</b></div>';
     }
     $("hourly").innerHTML = hh;
+    var tabs = ""; HM.forEach(function (m, ti) { if (H[m[0]]) tabs += '<button class="tab" data-i="' + ti + '">' + m[1] + '</button>'; });
+    $("htabs").innerHTML = tabs; drawHourly();
 
-    var dd = "";
-    for (var n = 0; n < d.daily.time.length; n++) {
-      var p = d.daily.time[n].split("-"), nm = n === 0 ? "আজ" : n === 1 ? "আগামীকাল" : DAYS[new Date(+p[0], +p[1] - 1, +p[2]).getDay()];
-      dd += '<div class="dy"><span>' + nm + '</span>' + icon(d.daily.weather_code[n], true) + '<span class="rn">' + bn(d.daily.precipitation_probability_max[n] || 0) + '%</span><span class="tt">' + bn(rd(d.daily.temperature_2m_max[n])) + '° <i>' + bn(rd(d.daily.temperature_2m_min[n])) + '°</i></span></div>';
-    }
-    $("daily").innerHTML = dd;
-    var gq = "https://www.google.com/search?q=weather&hl=bn";
-    $("google").href = gq; $("g2").href = gq;
+    drawDaily();
+    $("summary").innerHTML = '<b>আবহাওয়ার সারসংক্ষেপ</b><div class="aqs" style="border:0;margin-top:6px;padding-top:0;font-size:1rem;opacity:.95">আজ সর্বোচ্চ তাপমাত্রা প্রায় ' + bn(rd(D.temperature_2m_max[0])) + '° এবং সর্বনিম্ন প্রায় ' + bn(rd(D.temperature_2m_min[0])) + '°। বাতাসে আর্দ্রতা ' + bn(rd(cur.relative_humidity_2m)) + '%, বাতাসের গতি ' + bn(rd(cur.wind_speed_10m)) + ' কিমি/ঘণ্টা এবং বৃষ্টির সম্ভাবনা ' + bn(rainP) + '%।</div>';
+
+    // বিস্তারিত তথ্য (abohawa.bd-র ক্রমে)
+    var mi = [];
+    function card(t, v, sub) { mi.push('<div class="mi"><small>' + t + '</small><b>' + v + '</b><span>' + (sub || "&nbsp;") + '</span></div>'); }
+    card("বায়ুপ্রবাহ ও গতি", bn(rd(cur.wind_speed_10m)) + " কিমি/ঘ", cur.wind_direction_10m != null ? dirTxt(cur.wind_direction_10m) + (cur.wind_gusts_10m != null ? " · দমকা " + bn(rd(cur.wind_gusts_10m)) : "") : "");
+    card("আর্দ্রতা ও শিশিরাঙ্ক", bn(rd(cur.relative_humidity_2m)) + "%", H.dew_point_2m ? "শিশিরাঙ্ক " + bn(rd(H.dew_point_2m[i0])) + "°" : "");
+    if (H.uv_index) card("UV (রোদের তীব্রতা)", bn((H.uv_index[i0] || 0).toFixed(1)), uvTxt(H.uv_index[i0] || 0));
+    if (H.visibility) card("দৃশ্যমানতা", bn((H.visibility[i0] / 1000).toFixed(1)) + " কিমি", H.visibility[i0] < 2000 ? "কুয়াশা, সাবধানে চলুন" : "");
+    if (cur.pressure_msl != null) card("বায়ুচাপ", bn(rd(cur.pressure_msl)) + " hPa", "");
+    if (cur.cloud_cover != null) card("মেঘ ও বৃষ্টি", bn(rd(cur.cloud_cover)) + "%", "বর্তমান বৃষ্টিপাত: " + bn((cur.precipitation || 0).toFixed(1)) + " মিমি");
+    $("more").innerHTML = mi.join("");
+
+    var aq = c.aq;
+    if (aq && aq.us_aqi != null) {
+      var ai = aqiInfo(aq.us_aqi);
+      $("aqi").innerHTML = '<div class="aq"><div class="dot" style="background:' + ai[1] + '">' + bn(rd(aq.us_aqi)) + '</div><div><b>' + ai[0] + '</b><span>' + ai[2] + '</span></div></div>' +
+        '<div class="aqs">PM২.৫: ' + bn(rd(aq.pm2_5)) + ' · PM১০: ' + bn(rd(aq.pm10)) + ' · ওজোন: ' + bn(rd(aq.ozone)) + ' (মাইক্রোগ্রাম/ঘনমিটার)</div>';
+      $("aqiWrap").hidden = false;
+    } else { $("aqiWrap").hidden = true; }
+
+    var wb = wbgt(cur.temperature_2m, cur.relative_humidity_2m), hc = wb < 27.9 ? ["#27ae60", "গরমে কাজ করা নিরাপদ", "স্বাভাবিক কাজ করা যাবে। পরিমিত পানি পান করুন।"] :
+      wb < 29.9 ? ["#d4ac0d", "মাঝারি সতর্কতা", "কাজের ফাঁকে বিশ্রাম নিন, পানি পান করুন।"] :
+      wb < 31.4 ? ["#e67e22", "উচ্চ সতর্কতা", "রোদে ভারী কাজ এড়িয়ে চলুন, ঘন ঘন পানি পান করুন।"] : ["#e74c3c", "বিপজ্জনক গরম", "বাইরের কাজ বন্ধ রাখুন, ছায়ায় থাকুন।"];
+    $("heat").innerHTML = '<div class="aq"><div class="dot" style="background:' + hc[0] + '">' + bn(rd(wb)) + '°</div><div><b>' + hc[1] + '</b><span>' + hc[2] + '</span></div></div><div class="aqs">আনুমানিক হিসাব (ছায়ায়), তাপমাত্রা ও আর্দ্রতা থেকে বের করা। অন্য সাইটের সংখ্যার সাথে হুবহু না-ও মিলতে পারে।</div>';
+
+    drawHist(); drawAlerts(); drawAgri(); drawAreas(); resetExtras();
+    $("useGps").hidden = !readManual();
     show("content");
   }
 
@@ -308,10 +750,10 @@ var PLACE = ""; // জায়গার নাম নিজে ঠিক কর
     if (busy) return; busy = true;
     $("refresh").disabled = true; $("refresh").textContent = "দেখা হচ্ছে…";
     if (!cache) { show("loading"); $("loadMsg").textContent = "আপনার জায়গা খোঁজা হচ্ছে"; }
-    getCoords().then(function (co) {
+    (readManual() ? Promise.resolve({ lat: readManual().lat, lon: readManual().lon, manual: readManual().place }) : getCoords()).then(function (co) {
       $("loadMsg").textContent = "আবহাওয়ার তথ্য আনা হচ্ছে";
-      return Promise.all([fetchWx(co), fetchPlace(co, cache)]).then(function (r) {
-        cache = { t: Date.now(), lat: co.lat, lon: co.lon, place: r[1], data: r[0] };
+      return Promise.all([fetchWx(co), fetchPlace(co, cache), fetchAq(co), fetchHist(co), fetchAgri(co)]).then(function (r) {
+        cache = { t: Date.now(), lat: co.lat, lon: co.lon, place: r[1], data: r[0], aq: r[2], hist: r[3], agri: r[4] };
         writeCache(cache); banner(""); render(cache);
       });
     }).catch(function (e) {
@@ -325,6 +767,91 @@ var PLACE = ""; // জায়গার নাম নিজে ঠিক কর
       show("error");
     }).then(function () { busy = false; $("refresh").disabled = false; $("refresh").textContent = "নতুন করে দেখুন"; });
   }
+
+  var MKEY = "wx-area-v1";
+  function readManual() { try { return JSON.parse(localStorage.getItem(MKEY) || "null"); } catch (e) { return null; } }
+  function saveManual(m) { try { if (m) localStorage.setItem(MKEY, JSON.stringify(m)); else localStorage.removeItem(MKEY); localStorage.removeItem(KEY); } catch (e) {} cache = null; }
+
+  function placeFromResult(it) {
+    var base = pickPlace(it.address || {}), nm = clean(it.name || "");
+    if (!nm) return base || clean((it.display_name || "").split(",")[0]);
+    var rest = base ? base.split(", ").filter(function (x) { return x.indexOf(nm) < 0 && nm.indexOf(x) < 0; }) : [];
+    return [nm].concat(rest).slice(0, 3).join(", ");
+  }
+  function openSheet() { drawSaved(); $("sheet").hidden = false; $("res").innerHTML = ""; $("msgS").textContent = ""; $("q").value = ""; setTimeout(function () { $("q").focus(); }, 50); }
+  function closeSheet() { $("sheet").hidden = true; }
+  function doSearch() {
+    var q = $("q").value.trim(); if (q.length < 2) { $("msgS").textContent = "কমপক্ষে দুটি অক্ষর লিখুন।"; return; }
+    $("msgS").textContent = "খোঁজা হচ্ছে…"; $("res").innerHTML = "";
+    var t = timeout(9000);
+    fetch("https://nominatim.openstreetmap.org/search?format=jsonv2&addressdetails=1&limit=8&countrycodes=bd&accept-language=bn,en&q=" + encodeURIComponent(q), { signal: t.signal })
+      .then(function (r) { t.done(); if (!r.ok) throw new Error("http"); return r.json(); })
+      .then(function (list) {
+        var seen = {}, out = [];
+        list.forEach(function (it) { var n = placeFromResult(it); if (n && !seen[n]) { seen[n] = 1; out.push({ n: n, lat: +it.lat, lon: +it.lon }); } });
+        if (!out.length) { $("msgS").textContent = "কিছু পাওয়া যায়নি। অন্য বানানে বা শুধু উপজেলার নাম লিখে দেখুন।"; return; }
+        $("msgS").textContent = "নিচ থেকে আপনার এলাকাটি বেছে নিন:";
+        out.forEach(function (o) {
+          var pp = o.n.split(", "), b = document.createElement("button"); b.className = "item";
+          b.innerHTML = "<b></b><span></span>"; b.firstChild.textContent = pp[0]; b.lastChild.textContent = pp.slice(1).join(", ");
+          b.onclick = function () { var mm = { lat: o.lat, lon: o.lon, place: o.n }; pushSaved(mm); saveManual(mm); closeSheet(); load(); };
+          $("res").appendChild(b);
+        });
+      })
+      .catch(function () { t.done(); $("msgS").textContent = "খোঁজা যায়নি। ইন্টারনেট দেখে আবার চেষ্টা করুন।"; });
+  }
+  $("change").onclick = openSheet; $("closeS").onclick = closeSheet; $("doSearch").onclick = doSearch;
+  $("q").addEventListener("keydown", function (e) { if (e.key === "Enter") doSearch(); });
+  $("useGps").onclick = function () { saveManual(null); load(); };
+
+  $("htabs").addEventListener("click", function (e) { var i = e.target.getAttribute && e.target.getAttribute("data-i"); if (i != null) { V.hTab = +i; drawHourly(); } });
+  $("dv7").onclick = function () { V.days = 7; drawDaily(); }; $("dv14").onclick = function () { V.days = 14; drawDaily(); };
+  $("vlist").onclick = function () { V.graph = false; drawDaily(); }; $("vgraph").onclick = function () { V.graph = true; drawDaily(); };
+  $("h7").onclick = function () { V.hist = 7; drawHist(); }; $("h30").onclick = function () { V.hist = 30; drawHist(); };
+
+  // ---- তুলনা পেজ ----
+  var CR = [];
+  function numIn(v) { v = String(v).replace(/[০-৯]/g, function (d) { return DG.indexOf(d); }).replace(",", ".").trim(); var x = parseFloat(v); return isNaN(x) ? null : x; }
+  function openCmp() {
+    var c = V.c; if (!c) return;
+    var d = c.data, cur = d.current, H = d.hourly, D = d.daily, i0 = V.i0, aq = c.aq;
+    CR = [["তাপমাত্রা (°C)", cur.temperature_2m, 1, 1, 0], ["অনুভূত (°C)", cur.apparent_temperature, 2, 0, 0], ["আজ সর্বোচ্চ (°C)", D.temperature_2m_max[0], 1.5, 1, 0],
+      ["আজ সর্বনিম্ন (°C)", D.temperature_2m_min[0], 1.5, 1, 0], ["আর্দ্রতা (%)", cur.relative_humidity_2m, 6, 1, 0], ["বাতাস (কিমি/ঘ)", cur.wind_speed_10m, 4, 1, 0],
+      ["বৃষ্টির সম্ভাবনা (%)", D.precipitation_probability_max[0] || 0, 20, 1, 0], ["বায়ুচাপ (hPa)", cur.pressure_msl, 3, 0, 0], ["UV", H.uv_index ? H.uv_index[i0] : null, 1.5, 0, 1],
+      ["দৃশ্যমানতা (কিমি)", H.visibility ? H.visibility[i0] / 1000 : null, 3, 0, 1], ["AQI (US)", aq ? aq.us_aqi : null, 15, 0, 0], ["PM২.৫", aq ? aq.pm2_5 : null, 12, 0, 0]]
+      .filter(function (r) { return r[1] != null; });
+    $("ctable").innerHTML = CR.map(function (r, i) {
+      return '<div class="cr"><div class="cl">' + r[0] + '</div><div class="co">' + bn(r[4] ? (+r[1]).toFixed(1) : rd(r[1])) + '</div>' +
+        '<div class="ci"><input inputmode="decimal" data-s="a" data-i="' + i + '" placeholder="লিখুন"><small id="da' + i + '"></small></div>' +
+        (r[3] ? '<div class="ci"><input inputmode="decimal" data-s="g" data-i="' + i + '" placeholder="লিখুন"><small id="dg' + i + '"></small></div>' : '<div class="cn">দেখায় না</div>') + '</div>';
+    }).join("");
+    $("cnote").textContent = ""; $("cupd").textContent = "আমাদের সংখ্যা: " + $("upd").textContent;
+    $("cmpA").href = ABOHAWA || "https://abohawa.bd"; $("cmpG").href = "https://www.google.com/search?q=weather&hl=bn";
+    $("cmp").hidden = false;
+  }
+  function tally() {
+    var out = [], tot = { a: [0, 0], g: [0, 0] };
+    CR.forEach(function (r, i) { ["a", "g"].forEach(function (sx) {
+      var el = document.querySelector('input[data-s="' + sx + '"][data-i="' + i + '"]'); if (!el) return;
+      var v = numIn(el.value), o = $("d" + sx + i); if (!o) return;
+      if (v == null) { o.textContent = ""; o.className = ""; return; }
+      var df = r[1] - v; o.textContent = (df > 0.04 ? "+" : df < -0.04 ? "−" : "") + bn(Math.abs(df).toFixed(r[4] ? 1 : 1));
+      var ok = Math.abs(df) <= r[2]; o.className = ok ? "ok" : "bad"; tot[sx][1]++; if (ok) tot[sx][0]++;
+    }); });
+    if (tot.a[1]) out.push("abohawa.bd-র সাথে মিল: " + bn(tot.a[0]) + "/" + bn(tot.a[1])); if (tot.g[1]) out.push("Google-এর সাথে মিল: " + bn(tot.g[0]) + "/" + bn(tot.g[1]));
+    $("cnote").textContent = out.join(" · ");
+  }
+  $("ctable").addEventListener("input", tally);
+  $("nearBtn").onclick = loadNear; $("radarBtn").onclick = loadRadar;
+  $("shareBtn").onclick = function () {
+    var c = V.c; if (!c) return; var cu = c.data.current, D = c.data.daily;
+    var txt = (c.place || "আমার এলাকা") + ": এখন " + bn(rd(cu.temperature_2m)) + "°, " + text(cu.weather_code, cu.is_day === 1) + "। আজ সর্বোচ্চ " + bn(rd(D.temperature_2m_max[0])) + "°, সর্বনিম্ন " + bn(rd(D.temperature_2m_min[0])) + "°, বৃষ্টির সম্ভাবনা " + bn(D.precipitation_probability_max[0] || 0) + "%।";
+    var u = location.origin + location.pathname;
+    if (navigator.share) navigator.share({ title: "আবহাওয়া", text: txt, url: u }).catch(function () {}); else window.open("https://wa.me/?text=" + encodeURIComponent(txt + " " + u), "_blank");
+  };
+  $("cmpBtn").onclick = openCmp; $("cmpClose").onclick = function () { $("cmp").hidden = true; };
+  $("cmp").addEventListener("click", function (e) { if (e.target === this) this.hidden = true; });
+  if (ABOHAWA) $("aboBtn").href = ABOHAWA; else $("aboBtn").hidden = true;
 
   $("refresh").onclick = load; $("retry").onclick = load;
   addEventListener("online", load);
