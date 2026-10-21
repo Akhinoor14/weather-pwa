@@ -1,5 +1,5 @@
-const CACHE = "weather-shell-v11";
-const SHELL = ["./", "./index.html", "./manifest.webmanifest",
+const CACHE = "weather-shell-v20";
+const SHELL = ["./", "./index.html", "./compare.html", "./manifest.webmanifest",
   "./icons/icon-192.png", "./icons/icon-512.png", "./icons/apple-touch-icon.png"];
 
 self.addEventListener("install", (e) => {
@@ -21,8 +21,7 @@ self.addEventListener("fetch", (e) => {
   e.respondWith(
     fetch(req)
       .then((res) => {
-        const copy = res.clone();
-        caches.open(CACHE).then((c) => c.put(req, copy));
+        if (res.ok && !new URL(req.url).search.includes("embed")) { const copy = res.clone(); caches.open(CACHE).then((c) => c.put(req, copy)); }
         return res;
       })
       .catch(() => caches.match(req).then((r) => r || caches.match("./index.html")))

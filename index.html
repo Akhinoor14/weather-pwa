@@ -33,17 +33,17 @@ header{text-align:center;padding-top:6px}
 #place{font-size:1.45rem;font-weight:700}
 #placeSub{font-size:1.05rem;opacity:.9}
 #placeSub:empty{display:none}
-#upd{font-size:.95rem;opacity:.8;margin-top:2px}
+#upd{font-size:.95rem;opacity:.95;margin-top:2px}
 .hero{display:flex;flex-direction:column;align-items:center;margin:10px 0 6px}
-.bigicon svg{width:150px;filter:drop-shadow(0 10px 20px rgba(0,0,0,.25))}
-.temp{font-size:5.6rem;font-weight:600;line-height:1.05}
+.bigicon svg{width:118px;filter:drop-shadow(0 10px 20px rgba(0,0,0,.25))}
+.temp{font-size:4.8rem;font-weight:600;line-height:1.05}
 .cond{font-size:1.6rem;font-weight:600;margin-top:2px}
 .hilo{font-size:1.15rem;opacity:.92;margin-top:6px}
 .advice{margin:16px 0;padding:14px 16px;border-radius:18px;background:var(--glass);border:1px solid var(--line);font-size:1.2rem;line-height:1.55;text-align:center;font-weight:600}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .stat{background:var(--glass);border:1px solid var(--line);border-radius:18px;padding:14px 6px;text-align:center}
 .stat b{display:block;font-size:1.45rem}
-.stat span{font-size:.95rem;opacity:.85}
+.stat span{font-size:.95rem;opacity:.96}
 h2.sec{font-size:1.2rem;margin:26px 2px 10px}
 .hourly{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;scroll-snap-type:x proximity}
 .hr{flex:0 0 76px;scroll-snap-align:start;background:var(--glass);border:1px solid var(--line);border-radius:16px;padding:10px 4px;text-align:center}
@@ -54,16 +54,16 @@ h2.sec{font-size:1.2rem;margin:26px 2px 10px}
 .dy{display:grid;grid-template-columns:1fr 40px 54px 84px;align-items:center;gap:6px;padding:10px 0;border-top:1px solid var(--line);font-size:1.05rem}
 .dy:first-child{border-top:0}
 .dy svg{width:34px}
-.dy .rn{font-size:.95rem;opacity:.85;text-align:right}
+.dy .rn{font-size:.95rem;opacity:.95;text-align:right}
 .dy .tt{text-align:right;font-weight:700}
-.dy .tt i{font-style:normal;opacity:.7;font-weight:400}
+.dy .tt i{font-style:normal;opacity:.9;font-weight:400}
 .actions{display:flex;flex-direction:column;gap:12px;margin-top:26px}
 .btn{display:block;width:100%;padding:16px;border-radius:999px;border:0;text-align:center;text-decoration:none;font-weight:700;font-size:1.2rem;font-family:inherit;cursor:pointer}
 .btn.main{background:#fff;color:#1d5fd6;box-shadow:0 6px 18px rgba(0,0,0,.2)}
 .btn.ghost{background:var(--glass);border:1px solid var(--line);color:#fff}
 .btn:active{transform:scale(.98)}
 .btn[disabled]{opacity:.6}
-.src{text-align:center;font-size:.85rem;opacity:.7;margin-top:18px}
+.src{text-align:center;font-size:.9rem;opacity:.92;margin-top:18px}
 #banner{margin-bottom:14px;padding:12px 14px;border-radius:14px;background:rgba(255,200,61,.95);color:#4a3600;font-weight:600;font-size:1rem;text-align:center}
 #install{margin-top:20px;padding:14px;border-radius:18px;background:var(--glass);border:1px solid var(--line);text-align:center;font-size:1.05rem;line-height:1.55}
 #install .btn{margin-top:10px}
@@ -87,15 +87,15 @@ h2.sec{font-size:1.2rem;margin:26px 2px 10px}
 .aqs{font-size:.92rem;opacity:.85;margin-top:12px;padding-top:10px;border-top:1px solid var(--line)}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .mi{background:var(--glass);border:1px solid var(--line);border-radius:16px;padding:14px 12px}
-.mi small{display:block;font-size:.92rem;opacity:.85}
+.mi small{display:block;font-size:.92rem;opacity:.96}
 .mi b{display:block;font-size:1.35rem;margin:2px 0}
 .mi span{font-size:.92rem;opacity:.9}
 .dy.late{display:none}
 .all .dy.late{display:grid}
 #toggle14{margin-top:12px}
-.chips{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0 4px}
-.chip{background:var(--glass);border:1px solid var(--line);border-radius:14px;padding:10px 4px;text-align:center}
-.chip small{display:block;font-size:.85rem;opacity:.85}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 4px}
+.chip{flex:1 1 calc(33% - 8px);background:var(--glass);border:1px solid var(--line);border-radius:14px;padding:10px 4px;text-align:center}
+.chip small{display:block;font-size:.88rem;opacity:.96}
 .chip b{font-size:1.08rem}
 .tabs,.seg{display:flex;gap:8px;overflow-x:auto;margin:12px 0 10px;padding-bottom:4px}
 .tab,.seg button{flex:none;padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--glass);color:#fff;font-family:inherit;font-size:1rem;cursor:pointer}
@@ -107,7 +107,7 @@ h2.sec{font-size:1.2rem;margin:26px 2px 10px}
 .tmr .tl{display:flex;align-items:center;gap:12px}
 .tmr .tl svg{width:64px;flex:none}
 .tmr b{font-size:1.7rem}
-.tmr i{font-style:normal;opacity:.75;font-size:1.2rem}
+.tmr i{font-style:normal;opacity:.92;font-size:1.2rem}
 .tmr span{display:block;font-size:1.05rem;opacity:.92}
 .slots{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
 .slot{background:rgba(255,255,255,.12);border-radius:14px;padding:10px 4px;text-align:center}
@@ -133,7 +133,7 @@ h2.sec{font-size:1.2rem;margin:26px 2px 10px}
 .areas{display:flex;gap:8px;overflow-x:auto;margin:0 0 12px;padding-bottom:2px}
 .ac{flex:none;padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--glass);color:#fff;font-family:inherit;font-size:1rem;cursor:pointer}
 .ac.on{background:#fff;color:#1d5fd6;font-weight:700;border-color:#fff}
-.alert{background:#ffd447;color:#4a3600;border-radius:14px;padding:12px 14px;font-weight:700;font-size:1.05rem;line-height:1.45;margin-top:12px}
+.alert{background:#ffd447;color:#4a3600;border-radius:14px;padding:9px 12px;font-weight:700;font-size:.95rem;line-height:1.4;margin-top:8px}
 .alert.red{background:#ff6b5e;color:#fff}
 .note{font-size:1rem;line-height:1.5;opacity:.92;margin-bottom:10px}
 #radarMap{height:300px;border-radius:14px;overflow:hidden;background:#1d3a6b}
@@ -144,13 +144,76 @@ h2.sec{font-size:1.2rem;margin:26px 2px 10px}
 .near{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:11px 0;border-top:1px solid var(--line)}
 .near:first-child{border-top:0}
 .near b{font-size:1.1rem}
-.near small{display:block;opacity:.8;font-size:.88rem}
+.near small{display:block;opacity:.94;font-size:.88rem}
 .near .nt{display:flex;align-items:center;gap:8px;font-weight:700;font-size:1.15rem;flex:none}
 .near svg{width:32px}
 .sv{display:flex;gap:8px;margin-bottom:8px}
 .sv .item{margin:0;flex:1}
 .sv .x{flex:none;width:48px;border-radius:14px;border:1px solid var(--line);background:var(--glass);color:#fff;font-size:1.3rem;cursor:pointer}
 #savedList h3{font-size:1rem;opacity:.9;margin:0 0 8px}
+.nav{position:sticky;top:6px;z-index:5;display:flex;gap:8px;overflow-x:auto;margin:12px 0 0;padding:8px 10px;border-radius:999px;background:rgba(10,25,60,.45);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a.on{background:#fff;color:#1d5fd6;border-color:#fff;font-weight:700}
+.nav a{flex:none;padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--glass);color:#fff;text-decoration:none;font-size:1rem}
+h2.sec{scroll-margin-top:70px}
+.rstat{border-radius:16px;padding:14px;font-size:1.2rem;font-weight:700;line-height:1.5;margin-bottom:12px;color:#fff}
+.rstat.red{background:#e8483b}.rstat.amber{background:#ffd447;color:#4a3600}.rstat.green{background:rgba(39,174,96,.92)}
+.rbars{display:grid;grid-template-columns:repeat(12,1fr);gap:4px}
+.rb{text-align:center;display:flex;flex-direction:column;align-items:center;gap:3px;min-width:0}
+.rb small{font-size:.8rem;opacity:1;line-height:1.15;white-space:nowrap;min-height:2.3em;text-align:center}
+.rb small.pc{min-height:0;font-weight:700;font-size:.85rem}
+.rbv{width:100%;height:80px;display:flex;align-items:flex-end;background:rgba(255,255,255,.1);border-radius:6px;overflow:hidden}
+.rbv i{display:block;width:100%;border-radius:6px 6px 0 0}
+.dry3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.dc{background:var(--glass);border:1px solid var(--line);border-radius:16px;padding:12px 6px;text-align:center}
+.dc b{display:block;font-size:1.02rem}
+.dc .rt{display:inline-block;margin:6px 0;padding:4px 12px;border-radius:999px;font-weight:700;font-size:1rem;color:#fff}
+.dc small{display:block;font-size:.82rem;opacity:.95;line-height:1.35}
+.plat b{font-size:2rem;display:block}
+.plat span{font-size:1rem;opacity:.92}
+.pchg{margin-top:4px;font-weight:700;font-size:1.02rem}
+.pform{display:grid;grid-template-columns:1.2fr 1fr;gap:8px;margin:14px 0 8px}
+.pf{font-family:inherit;font-size:1.1rem;padding:12px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.96);color:#16233f;width:100%;min-width:0;margin-bottom:8px}
+.pform .pf{margin-bottom:0}
+.prow{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 0;border-top:1px solid var(--line)}
+.prow b{font-size:1.1rem}
+.prow small{display:block;opacity:.94;font-size:.88rem}
+.prow .x{flex:none;width:40px;height:40px;border-radius:12px;border:1px solid var(--line);background:var(--glass);color:#fff;font-size:1.2rem;cursor:pointer}
+#pMsg{font-size:.98rem;min-height:1.2em;margin:4px 0}
+.dy{cursor:pointer}
+.dy.open{background:rgba(255,255,255,.1);border-radius:12px}
+.dy .dd{display:block;font-size:.85rem;opacity:.94}
+.dy em{font-style:normal;opacity:.94;font-size:.85rem;margin-left:4px}
+.dayx{padding:8px 0 14px;border-top:1px solid var(--line)}
+.dayx .hint{font-size:1rem;font-weight:700;margin:2px 2px 10px;line-height:1.6}
+.dayx .rt{display:inline-block;padding:2px 10px;border-radius:999px;color:#fff;font-weight:700;font-size:.92rem}
+.dayx .hourly .hr{flex:0 0 70px}
+.hr small.rp{min-height:0;margin-top:2px;font-weight:700;opacity:.95}
+.hr small.rp.bad{color:#ffb4a8}
+details.fold{margin-top:8px}
+details.fold>summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:1.2rem;font-weight:700;margin:18px 2px 10px;padding:12px 14px;border-radius:16px;background:var(--glass);border:1px solid var(--line)}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary::after{content:"＋";font-size:1.3rem}
+details.fold[open]>summary::after{content:"−"}
+.skw{width:100%;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:6px}.skw .sk:first-child{grid-column:1/-1;height:110px}
+.sk{height:70px;border-radius:18px;background:linear-gradient(90deg,var(--glass),rgba(255,255,255,.34),var(--glass));background-size:200% 100%;animation:sh 1.3s linear infinite}
+@keyframes sh{from{background-position:200% 0}to{background-position:-200% 0}}
+@media (min-width:900px){
+  #app{max-width:1040px}
+  .cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:28px;align-items:start}
+  .colA,.colB{min-width:0}
+  #alerts{max-width:640px;margin:0 auto}
+  .nav{max-width:520px;margin-left:auto;margin-right:auto}
+}
+@media (min-width:900px){.embed #app{max-width:480px}.embed .cols{display:block}}
+#place[role=button]{cursor:pointer}
+#place[role=button]::after{content:" ▾";font-size:.7em;opacity:.85}
+.embed #place::after{content:""}
+.rfb{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;margin-left:8px;border-radius:50%;border:1px solid var(--line);background:var(--glass);color:#fff;font-size:1rem;cursor:pointer;vertical-align:middle}
+.advice{text-align:left;background:linear-gradient(135deg,rgba(255,255,255,.3),rgba(255,255,255,.12));border-left:6px solid #ffd447}
+.alert.more{background:var(--glass);color:#fff;border:1px solid var(--line);font-weight:600;text-align:center;cursor:pointer;width:100%;font-family:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid #fff;outline-offset:2px;box-shadow:0 0 0 5px rgba(0,0,0,.35)}
+.embed .nav,.embed #install{display:none!important}
 [hidden]{display:none!important}
 @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 @keyframes float{from{transform:translateY(-6px)}to{transform:translateY(6px)}}
@@ -165,6 +228,7 @@ h2.sec{font-size:1.2rem;margin:26px 2px 10px}
     <svg viewBox="0 0 64 64" aria-hidden="true"><g stroke="#ffd447" stroke-width="3" stroke-linecap="round"><line x1="32" y1="6" x2="32" y2="12"/><line x1="32" y1="52" x2="32" y2="58"/><line x1="6" y1="32" x2="12" y2="32"/><line x1="52" y1="32" x2="58" y2="32"/></g><circle cx="32" cy="32" r="13" fill="#ffc83d"/><g fill="#fff"><circle cx="24" cy="44" r="8"/><circle cx="35" cy="40" r="11"/><circle cx="46" cy="46" r="7"/><rect x="20" y="44" width="32" height="9" rx="4.5"/></g></svg>
     <h2>আবহাওয়া আনা হচ্ছে…</h2>
     <p id="loadMsg">আপনার জায়গা খোঁজা হচ্ছে</p>
+    <div class="skw" aria-hidden="true"><div class="sk"></div><div class="sk"></div><div class="sk"></div><div class="sk"></div></div>
   </section>
 
   <section id="error" class="center" hidden>
@@ -176,55 +240,25 @@ h2.sec{font-size:1.2rem;margin:26px 2px 10px}
 
   <section id="content" hidden>
     <div class="areas" id="areas" hidden></div>
-    <header><div id="place"></div><div id="placeSub"></div><div id="upd"></div></header>
-    <div id="alerts"></div>
+    <header><div id="place" role="button" tabindex="0" aria-label="এলাকা বদলান"></div><div id="placeSub"></div><div><span id="upd"></span><button class="rfb" id="hdrRef" aria-label="নতুন করে দেখুন">↻</button></div></header>
     <div class="hero">
       <div class="bigicon" id="bigicon"></div>
       <div class="temp" id="temp"></div>
       <div class="cond" id="cond"></div>
     </div>
+    <div id="alerts"></div>
+    <div class="nav" id="nav"><a href="#sec-rain">বৃষ্টি</a><a href="#sec-dry">শুকানো</a><a href="#sec-price">বাজারদর</a><a href="#sec-fc">আগামীকাল</a><a href="#sec-24h">২৪ ঘণ্টা</a><a href="#sec-14d">১৪ দিন</a><a href="#sec-more">আরও</a></div>
+    <div class="cols"><div class="colA">
     <div class="chips" id="chips"></div>
     <div class="advice" id="advice"></div>
     <div class="stats">
-      <div class="stat"><b id="sRain"></b><span>বৃষ্টির সম্ভাবনা</span></div>
+      <div class="stat"><b id="sRain"></b><span>বৃষ্টি (আজ সর্বোচ্চ)</span></div>
       <div class="stat"><b id="sHum"></b><span>আর্দ্রতা</span></div>
       <div class="stat"><b id="sWind"></b><span>বাতাস (কিমি/ঘণ্টা)</span></div>
     </div>
 
-    <h2 class="sec">আগামীকালের আবহাওয়া</h2>
-    <div class="card tmr" id="tomorrow"></div>
-
-    <h2 class="sec">আজকের আবহাওয়া (২৪ ঘণ্টা)</h2>
-    <div class="hourly" id="hourly"></div>
-    <div class="tabs" id="htabs"></div>
-    <div class="card chartc" id="hchart"></div>
-
-    <h2 class="sec">আগামী ১৪ দিনের পূর্বাভাস</h2>
-    <div class="seg"><button id="dv7">৭ দিন</button><button id="dv14">১৪ দিন</button><span class="gap"></span><button id="vlist">তালিকা</button><button id="vgraph">গ্রাফ</button></div>
-    <div class="daily" id="daily"></div>
-    <div class="card chartc" id="dchart" hidden></div>
-    <div class="card hstat" id="summary"></div>
-
-    <h2 class="sec">বিস্তারিত আবহাওয়া তথ্য</h2>
-    <div class="grid2" id="more"></div>
-
-    <div id="aqiWrap" hidden><h2 class="sec">বাতাসের মান</h2><div class="card" id="aqi"></div></div>
-
-    <h2 class="sec">তাপ-চাপ সূচক (আনুমানিক)</h2>
-    <div class="card" id="heat"></div>
-
-    <div id="histWrap" hidden>
-      <h2 class="sec">বিগত দিনের আবহাওয়া</h2>
-      <div class="seg"><button id="h7">৭ দিন</button><button id="h30">৩০ দিন</button></div>
-      <div class="card chartc" id="hist"></div>
-      <div class="grid2 hstat" id="histStats"></div>
-    </div>
-
-    <div id="agriWrap" hidden>
-      <h2 class="sec">কৃষি আবহাওয়া</h2>
-      <div class="grid2" id="agriCards"></div>
-      <div class="card hstat" id="agriAdv"></div>
-    </div>
+    <h2 class="sec" id="sec-rain">বৃষ্টির খবর</h2>
+    <div class="card" id="rainCard"></div>
 
     <h2 class="sec">বৃষ্টির রাডার</h2>
     <div class="card">
@@ -233,24 +267,83 @@ h2.sec{font-size:1.2rem;margin:26px 2px 10px}
       <div id="radarBox" hidden><div id="radarMap"></div><div class="rc"><button class="tab" id="rPlay">চালান</button><input type="range" id="rSlide" min="0" max="0" value="0"><span id="rTime"></span></div></div>
     </div>
 
-    <h2 class="sec">কাছাকাছি এলাকা</h2>
+    <h2 class="sec" id="sec-dry">ধান-ভুট্টা শুকানোর আবহাওয়া</h2>
+    <div class="dry3" id="dryCards"></div>
+    <div class="card hstat" id="dryNote"></div>
+
+    <h2 class="sec" id="sec-price">বাজারদর (ধান, ভুট্টা, চাল)</h2>
+    <div class="card" id="priceCard">
+      <div class="tabs" id="ptabs"></div>
+      <div class="plat" id="pLatest"></div>
+      <div class="chartc" id="pChart"></div>
+      <details class="fold" id="pAdd"><summary>＋ নতুন দর যোগ করুন</summary>
+      <div class="pform"><input class="pf" id="pVal" inputmode="decimal" placeholder="দাম লিখুন"><select class="pf" id="pUnit"><option value="m">টাকা/মণ</option><option value="k">টাকা/কেজি</option></select></div>
+      <input class="pf" id="pDate" type="date">
+      <input class="pf" id="pNote" maxlength="40" placeholder="কোথাকার দর বা কার কাছে (ঐচ্ছিক)">
+      <button class="btn main" id="pSave">দর সেভ করুন</button>
+      </details>
+      <div id="pMsg"></div>
+      <div id="pList"></div>
+      <p class="note" id="pRef"></p>
+      <p class="note">১ মণ = ৪০ কেজি ধরা হয়েছে। দর শুধু এই ফোনে সেভ থাকে।</p>
+      <button class="btn ghost" id="pShare">আজকের দর শেয়ার করুন</button>
+    </div>
+
+    <h2 class="sec" id="sec-fc">আগামীকালের আবহাওয়া</h2>
+    <div class="card tmr" id="tomorrow"></div>
+
+    </div><div class="colB">
+    <h2 class="sec" id="sec-24h">আজকের আবহাওয়া (২৪ ঘণ্টা)</h2>
+    <div class="hourly" id="hourly"></div>
+    <div class="tabs" id="htabs"></div>
+    <div class="card chartc" id="hchart"></div>
+
+    <h2 class="sec" id="sec-14d">আগামী ১৪ দিনের পূর্বাভাস</h2>
+    <div class="seg"><button id="dv7">৭ দিন</button><button id="dv14">১৪ দিন</button><span class="gap"></span><button id="vlist">তালিকা</button><button id="vgraph">গ্রাফ</button></div>
+    <p class="note" id="dayHint">যেকোনো দিনে চাপুন, নিচে সেই দিনের ঘণ্টা অনুযায়ী পূর্বাভাস আসবে।</p>
+    <div class="daily" id="daily"></div>
+    <div class="card chartc" id="dchart" hidden></div>
+    <div class="card hstat" id="summary"></div>
+
+    <h2 class="sec" id="sec-more">বিস্তারিত আবহাওয়া তথ্য</h2>
+    <div class="grid2" id="more"></div>
+
+    <div id="aqiWrap" hidden><h2 class="sec">বাতাসের মান</h2><div class="card" id="aqi"></div></div>
+
+    <details class="fold"><summary>তাপ-চাপ সূচক (আনুমানিক)</summary><div class="card" id="heat"></div></details>
+
+    <details class="fold" id="histWrap" hidden>
+      <summary>বিগত দিনের আবহাওয়া</summary>
+      <div class="seg"><button id="h7">৭ দিন</button><button id="h30">৩০ দিন</button></div>
+      <div class="card chartc" id="hist"></div>
+      <div class="grid2 hstat" id="histStats"></div>
+    </details>
+
+    <details class="fold" id="agriWrap" hidden>
+      <summary>কৃষি আবহাওয়া</summary>
+      <div class="grid2" id="agriCards"></div>
+      <div class="card hstat" id="agriAdv"></div>
+    </details>
+
+    <details class="fold"><summary>কাছাকাছি এলাকা</summary>
     <div class="card">
       <p class="note" id="nearMsg">প্রায় ১০ কিমি আশেপাশের জায়গাগুলোর তাপমাত্রা।</p>
       <div id="nearList"></div>
       <button class="btn ghost" id="nearBtn">কাছাকাছি এলাকা দেখুন</button>
-    </div>
+    </div></details>
 
     <div class="actions">
       <button class="btn main" id="refresh">নতুন করে দেখুন</button>
       <button class="btn ghost" id="shareBtn">শেয়ার করুন</button>
-      <button class="btn ghost" id="cmpBtn">তিন সোর্স তুলনা করুন</button>
       <button class="btn ghost" id="change">এলাকা বদলান</button>
       <button class="btn ghost" id="useGps" hidden>আমার লোকেশন (GPS) ব্যবহার করুন</button>
       <a class="btn ghost" id="aboBtn" href="#" target="_blank" rel="noopener">abohawa.bd-তে বিস্তারিত দেখুন</a>
       <a class="btn ghost" id="google" href="#" target="_blank" rel="noopener">Google-এ দেখুন</a>
+      <button class="btn ghost" id="cmpBtn">তিন পেজ পাশাপাশি দেখুন (কম্পিউটারে)</button>
     </div>
     <div id="install" hidden><div id="installTxt"></div><button class="btn main" id="installBtn" hidden>ফোনে ইনস্টল করুন</button></div>
     <p class="src">তথ্য: Open-Meteo</p>
+    </div></div>
   </section>
 </div>
 
@@ -265,29 +358,17 @@ h2.sec{font-size:1.2rem;margin:26px 2px 10px}
   </div>
 </div>
 
-<div id="cmp" hidden>
-  <div class="panel">
-    <h2>তিন সোর্সের তুলনা</h2>
-    <p>abohawa.bd ও Google সরাসরি আনা যায় না। তাই একই সময়ে ওই দুটি খুলে সংখ্যা এখানে লিখুন, পার্থক্য সাথে সাথে দেখাবে।</p>
-    <div class="two"><a class="btn ghost" id="cmpA" href="#" target="_blank" rel="noopener">abohawa.bd খুলুন</a><a class="btn ghost" id="cmpG" href="#" target="_blank" rel="noopener">Google খুলুন</a></div>
-    <div class="ch"><div>বিষয়</div><div>আমাদের</div><div>abohawa.bd</div><div>Google</div></div>
-    <div id="ctable"></div>
-    <p id="cnote"></p>
-    <p id="cupd"></p>
-    <button class="btn ghost" id="cmpClose">বন্ধ করুন</button>
-  </div>
-</div>
-
 <script>
 /* ===== সেটিংস: সাধারণত কিছু বদলাতে হবে না ===== */
 var LAT = "";   // খালি = ফোনের আসল লোকেশন। ঠিক করে দিতে চাইলে লিখুন, যেমন: 22.8456
 var LON = "";   // যেমন: 89.5403 (খুলনা)
 var ABOHAWA = "https://abohawa.bd/rangpur/dinajpur/birganj/shibrampur"; // আপনার এলাকার abohawa.bd লিংক। খালি রাখলে বাটন লুকানো থাকবে
 var PLACE = ""; // জায়গার নাম নিজে ঠিক করে দিতে চাইলে লিখুন, যেমন: "আমার গ্রাম, বৈরাগঞ্জ"। খালি = নিজে নাম খুঁজবে
+var GOV = { dhan: [36, "বোরো ২০২৬ সরকারি সংগ্রহ মূল্য"], chal: [49, "সেদ্ধ চাল, বোরো ২০২৬ সরকারি সংগ্রহ মূল্য"] }; // টাকা/কেজি। আমন ২০২৬-এর দাম ঘোষণা হলে এখানে বদলান
 /* ============================================== */
 (function () {
   var $ = function (id) { return document.getElementById(id); };
-  var KEY = "wx-cache-v5", DG = "০১২৩৪৫৬৭৮৯";
+  var KEY = "wx-cache-v6", DG = "০১২৩৪৫৬৭৮৯";
   var bn = function (v) { return String(v).replace(/\d/g, function (d) { return DG[d]; }); };
   var rd = Math.round;
 
@@ -372,7 +453,7 @@ var PLACE = ""; // জায়গার নাম নিজে ঠিক কর
   function fetchWx(co) {
     var u = "https://api.open-meteo.com/v1/forecast?latitude=" + co.lat.toFixed(4) + "&longitude=" + co.lon.toFixed(4) +
       "&current=temperature_2m,apparent_temperature,relative_humidity_2m,weather_code,wind_speed_10m,wind_direction_10m,wind_gusts_10m,pressure_msl,cloud_cover,precipitation,is_day" +
-      "&hourly=temperature_2m,apparent_temperature,precipitation_probability,weather_code,is_day,relative_humidity_2m,dew_point_2m,cloud_cover,pressure_msl,wind_speed_10m,visibility,uv_index" +
+      "&hourly=temperature_2m,apparent_temperature,precipitation_probability,precipitation,weather_code,is_day,relative_humidity_2m,dew_point_2m,cloud_cover,pressure_msl,wind_speed_10m,visibility,uv_index" +
       "&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,sunrise,sunset,wind_speed_10m_max" +
       "&timezone=auto&forecast_days=14";
     var t = timeout(12000);
@@ -464,7 +545,7 @@ var PLACE = ""; // জায়গার নাম নিজে ঠিক কর
     $("tc").setAttribute("content", { clear: "#2f7df6", cloudy: "#5d7899", rain: "#3f4e66", night: "#121d45" }[th]);
   }
 
-  var V = { c: null, i0: 0, hTab: 0, days: 7, graph: false, hist: 30 };
+  var V = { c: null, i0: 0, hTab: 0, days: 7, graph: false, hist: 30, openDay: -1, dTab: 0 };
   var HM = [["temperature_2m", "তাপমাত্রা", "°", null, "#ffc15e"], ["apparent_temperature", "অনুভূত", "°", null, "#ff9f7a"], ["precipitation_probability", "বৃষ্টি", "%", [0, 100], "#8fd3ff"],
     ["wind_speed_10m", "বাতাস", " কিমি/ঘ", [0, null], "#a5f0c8"], ["relative_humidity_2m", "আর্দ্রতা", "%", [0, 100], "#9fc5ff"], ["cloud_cover", "মেঘ", "%", [0, 100], "#d5dbe6"],
     ["pressure_msl", "চাপ", " hPa", null, "#f2b8ff"], ["uv_index", "UV", "", [0, null], "#ffe27a"]];
@@ -503,18 +584,40 @@ var PLACE = ""; // জায়গার নাম নিজে ঠিক কর
     var H = V.c.data.hourly, m = HM[V.hTab], arr = H[m[0]];
     var btns = $("htabs").children; for (var t = 0; t < btns.length; t++) btns[t].classList.toggle("on", +btns[t].getAttribute("data-i") === V.hTab);
     if (!arr) { $("hchart").innerHTML = ""; return; }
+    if (arr.slice(V.i0, V.i0 + 24).every(function (v) { return v == null; })) { $("hchart").innerHTML = '<div class="note" style="padding:10px">এই তথ্য পাওয়া যায়নি।</div>'; return; }
     var vals = [], labs = [], j, hh;
-    for (j = V.i0; j < Math.min(V.i0 + 24, H.time.length); j++) { hh = +H.time[j].slice(11, 13); vals.push(arr[j] == null ? 0 : arr[j]); labs.push(bn(h12(hh)) + (hh < 12 ? "AM" : "PM")); }
+    for (j = V.i0; j < Math.min(V.i0 + 24, H.time.length); j++) { hh = +H.time[j].slice(11, 13); vals.push(arr[j] == null ? 0 : arr[j]); labs.push(period(hh) + " " + bn(h12(hh))); }
     $("hchart").innerHTML = chart([{ v: vals, c: m[4] }], labs, { unit: m[2], lo: m[3] ? m[3][0] : null, hi: m[3] ? m[3][1] : null, vals: true, every: 3, xEvery: 3, dec: m[0] === "uv_index" });
+  }
+  function dayChart(q) {
+    var c = V.c, H = c.data.hourly, st = H.time.indexOf(c.data.daily.time[q] + "T00:00"), m = HM[V.dTab], arr = H[m[0]];
+    if (st < 0 || !arr) return "";
+    if (arr.slice(st, st + 24).every(function (v) { return v == null; })) return '<div class="note" style="padding:10px">এই দিনের জন্য এই তথ্য পাওয়া যায়নি।</div>';
+    var vals = [], labs = [], h;
+    for (h = 0; h < 24 && st + h < H.time.length; h++) { vals.push(arr[st + h] == null ? 0 : arr[st + h]); labs.push(period(h) + " " + bn(h12(h))); }
+    return chart([{ v: vals, c: m[4] }], labs, { unit: m[2], lo: m[3] ? m[3][0] : null, hi: m[3] ? m[3][1] : null, vals: true, every: 3, xEvery: 3 });
+  }
+  function dayPanel(q) {
+    var c = V.c, H = c.data.hourly, D = c.data.daily, date = D.time[q], st = H.time.indexOf(date + "T00:00"); if (st < 0) return "";
+    var pr0 = date.split("-"), nm = q === 0 ? "আজ" : q === 1 ? "আগামীকাল" : DAYS[new Date(+pr0[0], +pr0[1] - 1, +pr0[2]).getDay()];
+    var nowH = q === 0 ? +c.data.current.time.slice(11, 13) : -1, cards = "", h, di = dryInfo(q);
+    for (h = 0; h < 24 && st + h < H.time.length; h++) {
+      var k = st + h, pr = H.precipitation_probability ? H.precipitation_probability[k] || 0 : 0;
+      cards += '<div class="hr"><small>' + (h === nowH ? "এখন" : hourLbl(h)) + '</small>' + icon(H.weather_code[k], H.is_day[k] === 1) + '<b>' + bn(rd(H.temperature_2m[k])) + '°</b><small class="rp' + (pr >= 50 ? " bad" : "") + '">' + (pr ? bn(pr) + "%" : "&nbsp;") + '</small></div>';
+    }
+    var tabs = [[0, "তাপমাত্রা"], [2, "বৃষ্টি"], [3, "বাতাস"], [4, "আর্দ্রতা"]].map(function (t) { return '<button class="tab dtab' + (V.dTab === t[0] ? " on" : "") + '" data-t="' + t[0] + '">' + t[1] + '</button>'; }).join("");
+    return '<div class="dayx"><div class="hint">' + nm + ' · ' + dateLbl(date) + ' — ঘণ্টা অনুযায়ী পূর্বাভাস<br>শুকানো: <span class="rt" style="background:' + di.col + '">' + di.rating + '</span> ' + di.win + (di.unk ? ' (বৃষ্টির তথ্য ছাড়া আনুমানিক)' : '') + '</div>' +
+      '<div class="hourly">' + cards + '</div><div class="tabs">' + tabs + '</div><div class="card chartc">' + dayChart(q) + '</div></div>';
   }
   function drawDaily() {
     var D = V.c.data.daily, n = Math.min(V.days, D.time.length), q, dd = "", hi = [], lo = [], labs = [];
     $("dv7").classList.toggle("on", V.days === 7); $("dv14").classList.toggle("on", V.days === 14);
     $("vlist").classList.toggle("on", !V.graph); $("vgraph").classList.toggle("on", V.graph);
-    $("daily").hidden = V.graph; $("dchart").hidden = !V.graph;
+    $("daily").hidden = V.graph; $("dchart").hidden = !V.graph; $("dayHint").hidden = V.graph;
     for (q = 0; q < n; q++) {
-      var p = D.time[q].split("-"), wd = new Date(+p[0], +p[1] - 1, +p[2]).getDay(), nm = q === 0 ? "আজ" : q === 1 ? "আগামীকাল" : DAYS[wd];
-      dd += '<div class="dy"><span>' + nm + '</span>' + icon(D.weather_code[q], true) + '<span class="rn">' + bn(D.precipitation_probability_max[q] || 0) + '%</span><span class="tt">' + bn(rd(D.temperature_2m_max[q])) + '° <i>' + bn(rd(D.temperature_2m_min[q])) + '°</i></span></div>';
+      var p = D.time[q].split("-"), wd = new Date(+p[0], +p[1] - 1, +p[2]).getDay(), nm = q === 0 ? "আজ" : q === 1 ? "আগামীকাল" : DAYS[wd], open = V.openDay === q;
+      dd += '<div class="dy' + (open ? " open" : "") + '" data-i="' + q + '" role="button" tabindex="0"><span>' + nm + '<em>' + (open ? "▴" : "▾") + '</em><small class="dd">' + dateLbl(D.time[q]) + '</small></span>' + icon(D.weather_code[q], true) + '<span class="rn">' + (D.precipitation_probability_max[q] == null ? '—' : bn(D.precipitation_probability_max[q]) + '%') + '</span><span class="tt">' + bn(rd(D.temperature_2m_max[q])) + '° <i>' + bn(rd(D.temperature_2m_min[q])) + '°</i></span></div>';
+      if (open && !V.graph) dd += dayPanel(q);
       hi.push(D.temperature_2m_max[q]); lo.push(D.temperature_2m_min[q]); labs.push(q === 0 ? "আজ" : DS[wd]);
     }
     $("daily").innerHTML = dd;
@@ -532,6 +635,99 @@ var PLACE = ""; // জায়গার নাম নিজে ঠিক কর
       .map(function (x) { return '<div class="mi"><small>' + x[0] + '</small><b>' + x[1] + '</b></div>'; }).join("");
   }
 
+  // ---- বৃষ্টির খবর ----
+  function rainInfo(c) {
+    var H = c.data.hourly, i0 = V.i0, hours = [], first = null, soft = false, tot = 0, q, e = Math.min(i0 + 12, H.time.length);
+    for (q = i0; q < e; q++) {
+      var pr = H.precipitation_probability ? H.precipitation_probability[q] || 0 : 0, mm = H.precipitation ? H.precipitation[q] || 0 : 0;
+      var o = { h: +H.time[q].slice(11, 13), p: pr, mm: mm, i: q - i0 }; hours.push(o); tot += mm;
+      if (!first && (pr >= 50 || mm >= 0.5)) first = o; if (o.i <= 3 && pr >= 30) soft = true;
+    }
+    var level = first && first.i <= 3 ? "red" : (first || soft) ? "amber" : "green", msg;
+    if (level === "red") msg = (first.i === 0 ? "এখনই বৃষ্টির সম্ভাবনা (" : "প্রায় " + bn(first.i) + " ঘণ্টার মধ্যে, " + hourLbl(first.h) + " নাগাদ বৃষ্টির সম্ভাবনা (") + bn(first.p) + "%)। ধান-ভুট্টা এখনই তুলুন বা ঢেকে দিন।";
+    else if (level === "amber") msg = first ? (first.h < +c.data.current.time.slice(11, 13) ? "আগামীকাল " : "আজ ") + hourLbl(first.h) + " নাগাদ বৃষ্টির সম্ভাবনা (" + bn(first.p) + "%)। তার আগে শুকানো শেষ করুন, তোলার প্রস্তুতি রাখুন।" : "হালকা বৃষ্টির সম্ভাবনা আছে। আকাশের দিকে নজর রাখুন।";
+    else msg = "আগামী ১২ ঘণ্টায় বৃষ্টির সম্ভাবনা কম। শুকাতে দিতে পারেন।";
+    return { hours: hours, level: level, msg: msg, tot: tot };
+  }
+  function drawRain() {
+    var r = rainInfo(V.c), bars = "", hist = V.c.hist, y = "";
+    r.hours.forEach(function (o, ix) {
+      var col = o.p >= 50 ? "#ff6b5e" : o.p >= 30 ? "#ffd447" : "rgba(255,255,255,.6)", hh = o.h;
+      bars += '<div class="rb"><small class="pc">' + (o.p ? bn(o.p) : "&nbsp;") + '</small><div class="rbv"><i style="height:' + Math.max(o.p, 2) + '%;background:' + col + '"></i></div><small>' + (ix % 2 === 0 ? bn(h12(hh)) + "<br>" + period(hh) : "&nbsp;") + '</small></div>';
+    });
+    if (hist && hist.precipitation_sum) { var yd = hist.precipitation_sum[hist.time.length - 2]; if (yd != null) y = " · গতকাল বৃষ্টি: " + bn(yd.toFixed(1)) + " মিমি"; }
+    $("rainCard").innerHTML = '<div class="rstat ' + r.level + '">' + r.msg + '</div><div class="rbars">' + bars + '</div>' +
+      '<div class="aqs">পরবর্তী ১২ ঘণ্টার বৃষ্টির সম্ভাবনা (শতাংশ)। আগামী ১২ ঘণ্টায় মোট প্রায় ' + bn(r.tot.toFixed(1)) + ' মিমি' + y + '</div>';
+  }
+  function dryInfo(d) {
+    var c = V.c, H = c.data.hourly, D = c.data.daily, hNow = +c.data.current.time.slice(11, 13), date = D.time[d], good = [], n = 0, mxp = 0, unk = 0, q;
+    for (q = 0; q < H.time.length; q++) {
+      if (H.time[q].slice(0, 10) !== date) continue; var hh = +H.time[q].slice(11, 13); if (hh < 8 || hh > 16 || (d === 0 && hh < hNow)) continue;
+      var p0 = H.precipitation_probability ? H.precipitation_probability[q] : null, p = p0 || 0, mm = H.precipitation ? H.precipitation[q] || 0 : 0, cl = H.cloud_cover ? H.cloud_cover[q] || 0 : 0, rh = H.relative_humidity_2m ? H.relative_humidity_2m[q] || 0 : 0;
+      if (p0 == null) unk = 1; n++; mxp = Math.max(mxp, p); if (p < 30 && mm < 0.2 && cl < 70 && rh < 80) good.push(hh);
+    }
+    var best = [], run = []; good.forEach(function (h) { if (run.length && h === run[run.length - 1] + 1) run.push(h); else run = [h]; if (run.length > best.length) best = run.slice(); });
+    return { rating: !n ? "শেষ" : unk ? "অনিশ্চিত" : best.length >= 6 ? "ভালো" : best.length >= 3 ? "মাঝারি" : "খারাপ", col: (!n || unk) ? "#7f8c8d" : best.length >= 6 ? "#27ae60" : best.length >= 3 ? "#d4ac0d" : "#e74c3c",
+      win: best.length >= 2 ? hourLbl(best[0]) + " থেকে " + hourLbl(best[best.length - 1] + 1) : (n ? "ভালো সময় নেই" : "আজ আর রোদ নেই"), mxp: mxp, unk: unk };
+  }
+  function drawDry() {
+    var cards = "", d;
+    for (d = 0; d < 3 && d < V.c.data.daily.time.length; d++) {
+      var r = dryInfo(d);
+      cards += '<div class="dc"><b>' + (d === 0 ? "আজ" : d === 1 ? "আগামীকাল" : "পরশু") + '</b><span class="rt" style="background:' + r.col + '">' + r.rating + '</span><small>' + r.win + '</small><small>' + (r.unk ? 'বৃষ্টির সম্ভাবনার তথ্য নেই, হিসাব কম নির্ভরযোগ্য' : 'বৃষ্টির সম্ভাবনা ' + bn(r.mxp) + '% পর্যন্ত') + '</small></div>';
+    }
+    $("dryCards").innerHTML = cards;
+    $("dryNote").innerHTML = '<div class="aqs" style="border:0;margin:0;padding:0;font-size:1rem;opacity:.95">সকাল ৮টা থেকে বিকাল ৫টার মধ্যে রোদ, মেঘ, আর্দ্রতা ও বৃষ্টির সম্ভাবনা দেখে আনুমানিক হিসাব। ধান-ভুট্টা নাড়াচাড়া আর তোলার সময় ঠিক করতে সাহায্য করবে।</div>';
+  }
+
+  // ---- বাজারদর (নিজেদের খাতা) ----
+  var PKEY = "wx-prices-v1", PS = { p: "dhan" };
+  var PROD = [["dhan", "ধান"], ["vutta", "ভুট্টা"], ["chal", "চাল"]];
+  function readP() { try { return JSON.parse(localStorage.getItem(PKEY) || "[]"); } catch (e) { return []; } }
+  function writeP(a) { try { localStorage.setItem(PKEY, JSON.stringify(a)); } catch (e) {} }
+  var money = function (x) { return bn(Math.round(x).toLocaleString("en-US")); };
+  function todayISO() { var t = new Date(); return t.getFullYear() + "-" + ("0" + (t.getMonth() + 1)).slice(-2) + "-" + ("0" + t.getDate()).slice(-2); }
+  function drawPrice() {
+    var all = readP().filter(function (x) { return x.p === PS.p; }).sort(function (a, b) { return a.d < b.d ? -1 : a.d > b.d ? 1 : a.t - b.t; });
+    var tb = $("ptabs"); tb.innerHTML = ""; PROD.forEach(function (pr) { var b = mkBtn("tab" + (PS.p === pr[0] ? " on" : ""), pr[1], function () { PS.p = pr[0]; drawPrice(); }); tb.appendChild(b); });
+    var L = $("pLatest"), name = PROD.filter(function (x) { return x[0] === PS.p; })[0][1];
+    if (!all.length) { L.innerHTML = '<span>' + name + 'র কোনো দর সেভ করা নেই। নিচে আজকের দর লিখে সেভ করুন।</span>'; $("pChart").innerHTML = ""; $("pList").innerHTML = ""; }
+    else {
+      var last = all[all.length - 1], prev = all.length > 1 ? all[all.length - 2] : null, mz = last.v * 40;
+      var chg = ""; if (prev) { var df = mz - prev.v * 40; chg = df === 0 ? "আগের দরের সমান" : (df > 0 ? "▲ " : "▼ ") + money(Math.abs(df)) + " টাকা " + (df > 0 ? "বেড়েছে" : "কমেছে") + " (মণ প্রতি, আগের দরের তুলনায়)"; }
+      L.innerHTML = '<b>' + money(mz) + ' টাকা/মণ</b><span>' + bn(last.v.toFixed(2)) + ' টাকা/কেজি · ' + dateLbl(last.d) + (last.n ? ' · ' : '') + '</span><div class="pchg">' + chg + '</div>';
+      L.querySelector("span").appendChild(document.createTextNode(last.n || ""));
+      var tail = all.slice(-30);
+      $("pChart").innerHTML = tail.length >= 2 ? chart([{ v: tail.map(function (x) { return x.v * 40; }), c: "#ffc15e" }], tail.map(function (x) { return dateLbl(x.d); }), { vals: tail.length <= 6, every: 1, xEvery: Math.max(1, Math.ceil(tail.length / 5)), unit: "" }) : '<div class="note" style="padding:8px">দুইটি দর সেভ করলে ওঠা-নামার গ্রাফ আসবে।</div>';
+      var lst = $("pList"); lst.innerHTML = "";
+      all.slice(-8).reverse().forEach(function (x) {
+        var row = document.createElement("div"); row.className = "prow";
+        var left = document.createElement("div"), b = document.createElement("b"), sm = document.createElement("small");
+        b.textContent = money(x.v * 40) + " টাকা/মণ"; sm.textContent = dateLbl(x.d) + (x.n ? " · " + x.n : ""); left.appendChild(b); left.appendChild(sm); row.appendChild(left);
+        row.appendChild(mkBtn("x", "×", function () { writeP(readP().filter(function (y) { return y.id !== x.id; })); drawPrice(); })); lst.appendChild(row);
+      });
+    }
+    var g = GOV[PS.p], ref = "";
+    if (g) { ref = g[1] + ": " + bn(g[0]) + " টাকা/কেজি (" + money(g[0] * 40) + " টাকা/মণ)।"; if (all.length) { var dd = all[all.length - 1].v * 40 - g[0] * 40; ref += " আপনার সর্বশেষ দর তার চেয়ে মণে " + money(Math.abs(dd)) + " টাকা " + (dd >= 0 ? "বেশি" : "কম") + "।"; } }
+    else ref = "ভুট্টার কোনো সরকারি নির্ধারিত সংগ্রহ মূল্য নেই। দর হাট ও ব্যবসায়ীর ওপর নির্ভর করে।";
+    $("pRef").textContent = ref + " স্থানীয় দর রোজ বদলায়, তাই নিজের দর নিয়মিত সেভ করে রাখুন।";
+  }
+  function savePrice() {
+    var v = numIn($("pVal").value), msg = $("pMsg");
+    if (v == null || v <= 0) { msg.textContent = "দাম সঠিকভাবে লিখুন (যেমন: ১২৫০)।"; return; }
+    var perKg = $("pUnit").value === "m" ? v / 40 : v;
+    if (perKg < 5 || perKg > 500) { msg.textContent = "দামটা অস্বাভাবিক মনে হচ্ছে। একক (মণ/কেজি) ঠিক আছে কিনা দেখুন।"; return; }
+    var a = readP(); a.push({ id: Date.now() + "" + Math.floor(Math.random() * 1000), t: Date.now(), d: $("pDate").value || todayISO(), p: PS.p, v: perKg, n: ($("pNote").value || "").trim().slice(0, 40) });
+    writeP(a); $("pVal").value = ""; $("pNote").value = ""; msg.textContent = "সেভ হয়েছে।"; drawPrice();
+  }
+  function sharePrice() {
+    var all = readP(), parts = [];
+    PROD.forEach(function (pr) { var l = all.filter(function (x) { return x.p === pr[0]; }).sort(function (a, b) { return a.d < b.d ? -1 : a.d > b.d ? 1 : a.t - b.t; }).pop(); if (l) parts.push(pr[1] + " " + money(l.v * 40) + " টাকা/মণ (" + dateLbl(l.d) + ")"); });
+    if (!parts.length) { $("pMsg").textContent = "শেয়ার করার মতো কোনো দর সেভ নেই।"; return; }
+    var txt = "বাজারদর: " + parts.join(", ") + "।";
+    if (navigator.share) navigator.share({ title: "বাজারদর", text: txt }).catch(function () {}); else window.open("https://wa.me/?text=" + encodeURIComponent(txt), "_blank");
+  }
+
   // ---- সতর্কতা ----
   function drawAlerts() {
     var d = V.c.data, H = d.hourly, i0 = V.i0, out = [], th = 0, hv = 0, fog = 0, hot = 0, cold = 0, q, e = Math.min(i0 + 24, H.time.length);
@@ -545,7 +741,11 @@ var PLACE = ""; // জায়গার নাম নিজে ঠিক কর
     if (fog) out.push(["", "কুয়াশার সম্ভাবনা আছে। দৃশ্যমানতা কম থাকতে পারে।"]);
     if (hot) out.push(["red", "অতি গরম অনুভূত হবে। রোদে বের হবেন না, পানি পান করুন।"]);
     if (cold) out.push(["", "তীব্র ঠান্ডা অনুভূত হবে। গরম কাপড় পরুন।"]);
-    $("alerts").innerHTML = out.map(function (a) { return '<div class="alert ' + a[0] + '">সতর্কতা: ' + a[1] + '</div>'; }).join("");
+    var ri = rainInfo(V.c); if (ri.level === "red") out.unshift(["red", ri.msg]);
+    var al = out.map(function (a, i) { return '<div class="alert ' + a[0] + '"' + (i ? ' data-x hidden' : '') + '>সতর্কতা: ' + a[1] + '</div>'; }).join("");
+    if (out.length > 1) al += '<button class="alert more" id="alMore">আরও ' + bn(out.length - 1) + 'টি সতর্কতা দেখুন ▾</button>';
+    $("alerts").innerHTML = al;
+    if ($("alMore")) $("alMore").onclick = function () { document.querySelectorAll("#alerts [data-x]").forEach(function (e) { e.hidden = false; }); this.hidden = true; };
   }
 
   // ---- কৃষি আবহাওয়া ----
@@ -666,12 +866,18 @@ var PLACE = ""; // জায়গার নাম নিজে ঠিক কর
     $("nearList").innerHTML = ""; $("nearBtn").hidden = false; $("nearMsg").textContent = "প্রায় ১০ কিমি আশেপাশের জায়গাগুলোর তাপমাত্রা।";
   }
 
+  function updText(c) {
+    if (!c) return; var cur = c.data.current, t = clock(+cur.time.slice(11, 13), +cur.time.slice(14, 16)), m = c.t ? Math.max(0, Math.round((Date.now() - c.t) / 60000)) : null, ago = "";
+    if (m !== null) ago = m < 1 ? "এইমাত্র" : m < 60 ? bn(m) + " মিনিট আগে" : bn(Math.floor(m / 60)) + " ঘণ্টা আগে";
+    $("upd").textContent = "আপডেট: " + (ago ? ago + " (" + t + ")" : t);
+  }
+  setInterval(function () { if (V.c) updText(V.c); }, 60000);
   function render(c) {
     var d = c.data, cur = d.current, H = d.hourly, D = d.daily, day = cur.is_day === 1, code = cur.weather_code, q;
     V.c = c; setTheme(cur);
     var pp = (c.place || "").split(", ");
     $("place").textContent = pp[0] || "আপনার এলাকা"; $("placeSub").textContent = pp.slice(1).join(", ");
-    $("upd").textContent = "আপডেট: " + clock(+cur.time.slice(11, 13), +cur.time.slice(14, 16));
+    updText(c);
     $("bigicon").innerHTML = icon(code, day);
     $("temp").textContent = bn(rd(cur.temperature_2m)) + "°";
     $("cond").textContent = text(code, day);
@@ -696,7 +902,7 @@ var PLACE = ""; // জায়গার নাম নিজে ঠিক কর
         if (ix >= 0) sh += '<div class="slot"><small>' + sl[1] + '</small>' + icon(H.weather_code[ix], H.is_day[ix] === 1) + '<b>' + bn(rd(H.temperature_2m[ix])) + '°</b></div>';
       });
       tm = '<div class="tl">' + icon(D.weather_code[1], true) + '<div><b>' + bn(rd(D.temperature_2m_max[1])) + '° <i>/ ' + bn(rd(D.temperature_2m_min[1])) + '°</i></b><span>' + text(D.weather_code[1], true) + '</span></div></div><div class="slots">' + sh + '</div>' +
-        '<div class="aqs">' + (D.wind_speed_10m_max ? 'সর্বোচ্চ বাতাস: ' + bn(rd(D.wind_speed_10m_max[1])) + ' কিমি/ঘণ্টা · ' : '') + 'বৃষ্টির সম্ভাবনা: ' + bn(D.precipitation_probability_max[1] || 0) + '%</div>';
+        '<div class="aqs">' + (D.wind_speed_10m_max ? 'সর্বোচ্চ বাতাস: ' + bn(rd(D.wind_speed_10m_max[1])) + ' কিমি/ঘণ্টা · ' : '') + 'বৃষ্টির সম্ভাবনা: ' + (D.precipitation_probability_max[1] == null ? 'তথ্য নেই' : bn(D.precipitation_probability_max[1]) + '%') + '</div>';
     }
     $("tomorrow").innerHTML = tm;
 
@@ -736,7 +942,7 @@ var PLACE = ""; // জায়গার নাম নিজে ঠিক কর
       wb < 31.4 ? ["#e67e22", "উচ্চ সতর্কতা", "রোদে ভারী কাজ এড়িয়ে চলুন, ঘন ঘন পানি পান করুন।"] : ["#e74c3c", "বিপজ্জনক গরম", "বাইরের কাজ বন্ধ রাখুন, ছায়ায় থাকুন।"];
     $("heat").innerHTML = '<div class="aq"><div class="dot" style="background:' + hc[0] + '">' + bn(rd(wb)) + '°</div><div><b>' + hc[1] + '</b><span>' + hc[2] + '</span></div></div><div class="aqs">আনুমানিক হিসাব (ছায়ায়), তাপমাত্রা ও আর্দ্রতা থেকে বের করা। অন্য সাইটের সংখ্যার সাথে হুবহু না-ও মিলতে পারে।</div>';
 
-    drawHist(); drawAlerts(); drawAgri(); drawAreas(); resetExtras();
+    drawHist(); drawAlerts(); drawAgri(); drawAreas(); resetExtras(); drawRain(); drawDry(); drawPrice();
     $("useGps").hidden = !readManual();
     show("content");
   }
@@ -744,19 +950,30 @@ var PLACE = ""; // জায়গার নাম নিজে ঠিক কর
   function show(id) { ["loading", "error", "content"].forEach(function (s) { $(s).hidden = s !== id; }); }
   function banner(t) { $("banner").hidden = !t; $("banner").textContent = t || ""; }
 
-  var busy = false, cache = readCache();
+  var busy = false, gen = 0, cache = readCache();
 
+  function forcedLoc() {
+    var q = new URLSearchParams(location.search);
+    return q.has("lat") && q.has("lon") ? Promise.resolve({ lat: +q.get("lat"), lon: +q.get("lon"), manual: q.get("place") || "" }) : null;
+  }
+  if (new URLSearchParams(location.search).has("embed")) document.documentElement.classList.add("embed");
+  addEventListener("message", function (e) {
+    if (e.origin !== location.origin || !e.data || !e.data.jump) return;
+    var el = document.getElementById(e.data.jump); if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
   function load() {
-    if (busy) return; busy = true;
+    var my = ++gen; busy = true;
     $("refresh").disabled = true; $("refresh").textContent = "দেখা হচ্ছে…";
     if (!cache) { show("loading"); $("loadMsg").textContent = "আপনার জায়গা খোঁজা হচ্ছে"; }
-    (readManual() ? Promise.resolve({ lat: readManual().lat, lon: readManual().lon, manual: readManual().place }) : getCoords()).then(function (co) {
+    (forcedLoc() || (readManual() ? Promise.resolve({ lat: readManual().lat, lon: readManual().lon, manual: readManual().place }) : getCoords())).then(function (co) {
       $("loadMsg").textContent = "আবহাওয়ার তথ্য আনা হচ্ছে";
       return Promise.all([fetchWx(co), fetchPlace(co, cache), fetchAq(co), fetchHist(co), fetchAgri(co)]).then(function (r) {
+        if (my !== gen) return;
         cache = { t: Date.now(), lat: co.lat, lon: co.lon, place: r[1], data: r[0], aq: r[2], hist: r[3], agri: r[4] };
         writeCache(cache); banner(""); render(cache);
       });
     }).catch(function (e) {
+      if (my !== gen) return;
       if (cache) { banner("ইন্টারনেট বা লোকেশন পাওয়া যায়নি। আগের তথ্য দেখানো হচ্ছে।"); render(cache); return; }
       var denied = e && e.why === "denied";
       $("errT").textContent = denied ? "লোকেশনের অনুমতি দরকার" : "আবহাওয়া আনা যায়নি";
@@ -765,7 +982,7 @@ var PLACE = ""; // জায়গার নাম নিজে ঠিক কর
         : "ইন্টারনেট ও ফোনের লোকেশন (GPS) চালু আছে কিনা দেখে আবার চেষ্টা করুন।";
       $("g2").href = "https://www.google.com/search?q=weather&hl=bn";
       show("error");
-    }).then(function () { busy = false; $("refresh").disabled = false; $("refresh").textContent = "নতুন করে দেখুন"; });
+    }).then(function () { if (my !== gen) return; busy = false; $("refresh").disabled = false; $("refresh").textContent = "নতুন করে দেখুন"; });
   }
 
   var MKEY = "wx-area-v1";
@@ -800,48 +1017,24 @@ var PLACE = ""; // জায়গার নাম নিজে ঠিক কর
       })
       .catch(function () { t.done(); $("msgS").textContent = "খোঁজা যায়নি। ইন্টারনেট দেখে আবার চেষ্টা করুন।"; });
   }
-  $("change").onclick = openSheet; $("closeS").onclick = closeSheet; $("doSearch").onclick = doSearch;
+  $("change").onclick = openSheet; $("hdrRef").onclick = load;
+  if (!new URLSearchParams(location.search).has("embed")) { $("place").onclick = openSheet; $("place").onkeydown = function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openSheet(); } }; } else { $("place").removeAttribute("role"); $("place").removeAttribute("tabindex"); } $("closeS").onclick = closeSheet; $("doSearch").onclick = doSearch;
   $("q").addEventListener("keydown", function (e) { if (e.key === "Enter") doSearch(); });
   $("useGps").onclick = function () { saveManual(null); load(); };
 
   $("htabs").addEventListener("click", function (e) { var i = e.target.getAttribute && e.target.getAttribute("data-i"); if (i != null) { V.hTab = +i; drawHourly(); } });
   $("dv7").onclick = function () { V.days = 7; drawDaily(); }; $("dv14").onclick = function () { V.days = 14; drawDaily(); };
   $("vlist").onclick = function () { V.graph = false; drawDaily(); }; $("vgraph").onclick = function () { V.graph = true; drawDaily(); };
+  $("daily").addEventListener("click", function (e) {
+    var t = e.target.closest ? e.target.closest(".dtab") : null;
+    if (t) { V.dTab = +t.getAttribute("data-t"); drawDaily(); return; }
+    var r = e.target.closest ? e.target.closest(".dy") : null;
+    if (r) { var i = +r.getAttribute("data-i"); V.openDay = V.openDay === i ? -1 : i; drawDaily(); }
+  });
   $("h7").onclick = function () { V.hist = 7; drawHist(); }; $("h30").onclick = function () { V.hist = 30; drawHist(); };
 
-  // ---- তুলনা পেজ ----
-  var CR = [];
-  function numIn(v) { v = String(v).replace(/[০-৯]/g, function (d) { return DG.indexOf(d); }).replace(",", ".").trim(); var x = parseFloat(v); return isNaN(x) ? null : x; }
-  function openCmp() {
-    var c = V.c; if (!c) return;
-    var d = c.data, cur = d.current, H = d.hourly, D = d.daily, i0 = V.i0, aq = c.aq;
-    CR = [["তাপমাত্রা (°C)", cur.temperature_2m, 1, 1, 0], ["অনুভূত (°C)", cur.apparent_temperature, 2, 0, 0], ["আজ সর্বোচ্চ (°C)", D.temperature_2m_max[0], 1.5, 1, 0],
-      ["আজ সর্বনিম্ন (°C)", D.temperature_2m_min[0], 1.5, 1, 0], ["আর্দ্রতা (%)", cur.relative_humidity_2m, 6, 1, 0], ["বাতাস (কিমি/ঘ)", cur.wind_speed_10m, 4, 1, 0],
-      ["বৃষ্টির সম্ভাবনা (%)", D.precipitation_probability_max[0] || 0, 20, 1, 0], ["বায়ুচাপ (hPa)", cur.pressure_msl, 3, 0, 0], ["UV", H.uv_index ? H.uv_index[i0] : null, 1.5, 0, 1],
-      ["দৃশ্যমানতা (কিমি)", H.visibility ? H.visibility[i0] / 1000 : null, 3, 0, 1], ["AQI (US)", aq ? aq.us_aqi : null, 15, 0, 0], ["PM২.৫", aq ? aq.pm2_5 : null, 12, 0, 0]]
-      .filter(function (r) { return r[1] != null; });
-    $("ctable").innerHTML = CR.map(function (r, i) {
-      return '<div class="cr"><div class="cl">' + r[0] + '</div><div class="co">' + bn(r[4] ? (+r[1]).toFixed(1) : rd(r[1])) + '</div>' +
-        '<div class="ci"><input inputmode="decimal" data-s="a" data-i="' + i + '" placeholder="লিখুন"><small id="da' + i + '"></small></div>' +
-        (r[3] ? '<div class="ci"><input inputmode="decimal" data-s="g" data-i="' + i + '" placeholder="লিখুন"><small id="dg' + i + '"></small></div>' : '<div class="cn">দেখায় না</div>') + '</div>';
-    }).join("");
-    $("cnote").textContent = ""; $("cupd").textContent = "আমাদের সংখ্যা: " + $("upd").textContent;
-    $("cmpA").href = ABOHAWA || "https://abohawa.bd"; $("cmpG").href = "https://www.google.com/search?q=weather&hl=bn";
-    $("cmp").hidden = false;
-  }
-  function tally() {
-    var out = [], tot = { a: [0, 0], g: [0, 0] };
-    CR.forEach(function (r, i) { ["a", "g"].forEach(function (sx) {
-      var el = document.querySelector('input[data-s="' + sx + '"][data-i="' + i + '"]'); if (!el) return;
-      var v = numIn(el.value), o = $("d" + sx + i); if (!o) return;
-      if (v == null) { o.textContent = ""; o.className = ""; return; }
-      var df = r[1] - v; o.textContent = (df > 0.04 ? "+" : df < -0.04 ? "−" : "") + bn(Math.abs(df).toFixed(r[4] ? 1 : 1));
-      var ok = Math.abs(df) <= r[2]; o.className = ok ? "ok" : "bad"; tot[sx][1]++; if (ok) tot[sx][0]++;
-    }); });
-    if (tot.a[1]) out.push("abohawa.bd-র সাথে মিল: " + bn(tot.a[0]) + "/" + bn(tot.a[1])); if (tot.g[1]) out.push("Google-এর সাথে মিল: " + bn(tot.g[0]) + "/" + bn(tot.g[1]));
-    $("cnote").textContent = out.join(" · ");
-  }
-  $("ctable").addEventListener("input", tally);
+  function numIn(v) { v = String(v).replace(/[০-৯]/g, function (d) { return DG.indexOf(d); }).trim(); if (/^\d{1,3}(,\d{3})+(\.\d+)?$/.test(v) || /^\d{1,3}(,\d\d)*,\d{3}(\.\d+)?$/.test(v)) v = v.replace(/,/g, ""); else v = v.replace(",", "."); var x = parseFloat(v); return isNaN(x) ? null : x; }
+  $("pDate").value = todayISO(); $("pSave").onclick = savePrice; $("pShare").onclick = sharePrice;
   $("nearBtn").onclick = loadNear; $("radarBtn").onclick = loadRadar;
   $("shareBtn").onclick = function () {
     var c = V.c; if (!c) return; var cu = c.data.current, D = c.data.daily;
@@ -849,13 +1042,12 @@ var PLACE = ""; // জায়গার নাম নিজে ঠিক কর
     var u = location.origin + location.pathname;
     if (navigator.share) navigator.share({ title: "আবহাওয়া", text: txt, url: u }).catch(function () {}); else window.open("https://wa.me/?text=" + encodeURIComponent(txt + " " + u), "_blank");
   };
-  $("cmpBtn").onclick = openCmp; $("cmpClose").onclick = function () { $("cmp").hidden = true; };
-  $("cmp").addEventListener("click", function (e) { if (e.target === this) this.hidden = true; });
+  $("cmpBtn").onclick = function () { window.open("compare.html?a=" + encodeURIComponent(ABOHAWA || ""), "_blank"); };
   if (ABOHAWA) $("aboBtn").href = ABOHAWA; else $("aboBtn").hidden = true;
 
   $("refresh").onclick = load; $("retry").onclick = load;
-  addEventListener("online", load);
-  document.addEventListener("visibilitychange", function () { if (!document.hidden && (!cache || Date.now() - cache.t > 10 * 60 * 1000)) load(); });
+  addEventListener("online", function () { if (!busy) load(); });
+  document.addEventListener("visibilitychange", function () { if (!document.hidden && !busy && (!cache || Date.now() - cache.t > 10 * 60 * 1000)) load(); });
 
   // ইনস্টল
   var standalone = matchMedia("(display-mode: standalone)").matches || navigator.standalone === true, dp;
@@ -868,6 +1060,18 @@ var PLACE = ""; // জায়গার নাম নিজে ঠিক কর
 
   if ("serviceWorker" in navigator) addEventListener("load", function () { navigator.serviceWorker.register("sw.js").catch(function () {}); });
 
+  (function () {
+    var links = Array.prototype.slice.call(document.querySelectorAll("#nav a")), nav = $("nav"), tick = false, cur = null;
+    var secs = links.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+    function spy() {
+      tick = false; var k = -1, i;
+      for (i = 0; i < secs.length; i++) if (secs[i] && secs[i].getBoundingClientRect().top <= 130) k = i;
+      if (k === cur) return; cur = k;
+      links.forEach(function (a, j) { a.classList.toggle("on", j === k); });
+      if (k >= 0 && nav.scrollWidth > nav.clientWidth) nav.scrollTo({ left: links[k].offsetLeft - 40, behavior: "smooth" });
+    }
+    addEventListener("scroll", function () { if (!tick) { tick = true; requestAnimationFrame(spy); } }, { passive: true });
+  })();
   if (cache) render(cache);
   load();
 })();

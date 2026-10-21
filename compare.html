@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>তিন পেজ পাশাপাশি</title>
+<style>
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{font-family:"Noto Sans Bengali","Hind Siliguri",system-ui,-apple-system,"Segoe UI",sans-serif;background:#0a1230;color:#fff;display:flex;flex-direction:column}
+.bar{flex:none;display:flex;align-items:center;gap:8px;padding:8px 12px;background:#12224f;overflow-x:auto;white-space:nowrap}
+.bar h1{font-size:1.05rem;margin:0 4px 0 0}
+.bar a,.bar button,.ch a,.ch button{font-family:inherit;font-size:.9rem;color:#fff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:6px 12px;cursor:pointer;text-decoration:none}
+.bar .sep{flex:none;width:1px;height:22px;background:rgba(255,255,255,.28)}
+.bar label{font-size:.9rem;opacity:.9}
+.bar input{width:280px;font-family:inherit;font-size:.9rem;padding:6px 10px;border-radius:8px;border:1px solid rgba(255,255,255,.3);background:#fff;color:#16233f}
+.note{flex:none;font-size:.85rem;padding:6px 12px;background:#0f1c44;opacity:.95}
+.grid{flex:1;min-height:0;display:grid;grid-template-columns:repeat(3,minmax(420px,1fr));gap:3px;background:#000;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity}
+.col{display:flex;flex-direction:column;min-width:0;background:#fff;scroll-snap-align:start}
+.ch{flex:none;display:flex;align-items:center;gap:6px;padding:7px 10px;background:#1d3a8a}
+.ch b{flex:1;font-size:.98rem}
+.body{flex:1;min-height:0;position:relative}
+iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#fff}
+.ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:24px;color:#16233f;background:#eef3ff;line-height:1.6}
+.ph button{font-family:inherit;font-size:1.05rem;padding:12px 22px;border-radius:999px;border:0;background:#1d5fd6;color:#fff;cursor:pointer}
+.ph button.alt{background:#fff;color:#1d5fd6;border:1px solid #1d5fd6}
+@media (max-width:600px){.grid{grid-template-columns:repeat(3,92vw)}}
+</style>
+</head>
+<body>
+<div class="bar">
+  <a href="index.html">← অ্যাপে ফিরুন</a>
+  <h1>তিন পেজ পাশাপাশি</h1>
+  <span class="sep"></span>
+  <label>আমাদের কলামে যান:</label>
+  <button data-j="sec-rain">বৃষ্টি</button><button data-j="sec-fc">আগামীকাল</button><button data-j="sec-24h">২৪ ঘণ্টা</button><button data-j="sec-14d">১৪ দিন</button><button data-j="sec-more">বিস্তারিত</button><button data-j="aqiWrap">বাতাসের মান</button><button data-j="histWrap">ইতিহাস</button>
+  <span class="sep"></span>
+  <label for="abIn">abohawa.bd লিংক:</label><input id="abIn" type="url"><button id="abGo">খুলুন</button>
+</div>
+<div class="note">স্ক্রিন ছোট হলে কলামগুলো ডানে-বামে স্ক্রল করে দেখুন। উপর-নিচ স্ক্রল প্রতিটি কলামে আলাদা। অন্য সাইট একসাথে স্ক্রল করতে ব্রাউজার দেয় না। Google নিজে ফ্রেমের ভেতরে খোলে না, তাই ৩য় কলামে বাটনে চাপলে ঠিক ওই জায়গায় একটা উইন্ডো খুলবে।</div>
+<div class="grid" id="grid">
+  <div class="col on" id="c0"><div class="ch"><b>১. আমাদের অ্যাপ</b><button data-r="f1">↻</button><a id="n0" target="_blank" rel="noopener">নতুন ট্যাবে</a></div><div class="body"><iframe id="f1" allow="geolocation" title="আমাদের অ্যাপ"></iframe></div></div>
+  <div class="col" id="c1"><div class="ch"><b>২. abohawa.bd</b><button data-r="f2">↻</button><button data-side="1">পাশে উইন্ডোতে</button><a id="n1" target="_blank" rel="noopener">নতুন ট্যাবে</a></div><div class="body"><iframe id="f2" title="abohawa.bd"></iframe></div></div>
+  <div class="col" id="c2"><div class="ch"><b>৩. Google</b><button data-side="2">পাশে উইন্ডোতে</button><a id="n2" target="_blank" rel="noopener">নতুন ট্যাবে</a></div><div class="body" id="b2"><div class="ph" id="ph2"><div>Google নিজে ফ্রেমের ভেতরে খোলে না।<br>নিচের বাটনে চাপলে ঠিক এই জায়গায় একটা উইন্ডো খুলবে।</div><button id="gSide">Google এখানে খুলুন</button><button class="alt" id="gTry">ফ্রেমে চেষ্টা করুন</button><div id="gMsg"></div></div></div></div>
+</div>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); }, q = new URLSearchParams(location.search), cache = null;
+  try { var k = Object.keys(localStorage).filter(function (x) { return x.indexOf("wx-cache-") === 0; }).sort().pop(); cache = k ? JSON.parse(localStorage.getItem(k)) : null; } catch (e) {}
+  var AB = ""; try { AB = localStorage.getItem("wx-abohawa-url") || ""; } catch (e) {}
+  AB = AB || q.get("a") || "https://abohawa.bd";
+  var GG = "https://www.google.com/search?q=weather&hl=bn";
+  var ours = "index.html?embed=1" + (cache && cache.lat != null ? "&lat=" + cache.lat + "&lon=" + cache.lon + "&place=" + encodeURIComponent(cache.place || "") : "");
+
+  function setAb(u) { AB = u; try { localStorage.setItem("wx-abohawa-url", u); } catch (e) {} $("abIn").value = u; $("f2").src = u; $("n1").href = u; }
+  $("f1").src = ours; $("n0").href = ours; $("n2").href = GG; setAb(AB);
+  $("abGo").onclick = function () { var v = $("abIn").value.trim(); if (/^https?:\/\//.test(v)) setAb(v); };
+
+  document.querySelectorAll("[data-j]").forEach(function (b) { b.onclick = function () { $("f1").contentWindow.postMessage({ jump: b.getAttribute("data-j") }, location.origin); }; });
+  document.querySelectorAll("[data-r]").forEach(function (b) { b.onclick = function () { var f = $(b.getAttribute("data-r")); f.src = f.src; }; });
+
+  function openBeside(url, name, colId) {
+    var r = $(colId).querySelector(".body").getBoundingClientRect(), chrome = window.outerHeight - window.innerHeight;
+    var f = "popup=yes,left=" + Math.round(window.screenX + r.left) + ",top=" + Math.round(window.screenY + chrome + r.top) + ",width=" + Math.round(r.width) + ",height=" + Math.round(r.height);
+    return window.open(url, name, f);
+  }
+  document.querySelector('[data-side="1"]').onclick = function () { openBeside(AB, "abCmp", "c1"); };
+  document.querySelector('[data-side="2"]').onclick = function () { openBeside(GG, "ggCmp", "c2"); };
+  $("gSide").onclick = function () { var w = openBeside(GG, "ggCmp", "c2"); $("gMsg").textContent = w ? "" : "উইন্ডো খোলা যায়নি। ব্রাউজারের পপ-আপ অনুমতি দিন।"; };
+  $("gTry").onclick = function () { var f = document.createElement("iframe"); f.src = GG; f.title = "Google"; $("b2").appendChild(f); $("ph2").style.display = "none"; };
+
+})();
+</script>
+</body>
+</html>
