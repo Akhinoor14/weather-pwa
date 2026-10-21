@@ -1,4 +1,4 @@
-const CACHE = "weather-shell-v20";
+const CACHE = "weather-shell-v23";
 const SHELL = ["./", "./index.html", "./compare.html", "./manifest.webmanifest",
   "./icons/icon-192.png", "./icons/icon-512.png", "./icons/apple-touch-icon.png"];
 
